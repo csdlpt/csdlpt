@@ -34,20 +34,26 @@ namespace QLDSV_TC
             // TODO: This line of code loads data into the 'dS.LOPTINCHI' table. You can move, or remove it, as needed.
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.dS.LOPTINCHI);
+            EnableForm();
 
         }
         private void DisableForm()
         {
-            lOPTINCHIGridControl.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
+            lOPTINCHIGridControl.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            txtMaGV.Enabled = false;
+            txtMaMonHoc.Enabled = txtNienKhoa.Enabled = seHocKy.Enabled = seNhom.Enabled = seSVTT.Enabled = true;
+            cmbChiNhanh.Enabled = false;
         }
 
         private void EnableForm()
         {
-            lOPTINCHIGridControl.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
-            btnPhucHoi.Enabled = btnGhi.Enabled = true;
+            lOPTINCHIGridControl.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
+            txtMaGV.Enabled = txtMaMonHoc.Enabled = txtNienKhoa.Enabled = seHocKy.Enabled = seNhom.Enabled = seSVTT.Enabled = false;
+            btnPhucHoi.Enabled = btnGhi.Enabled = false;
+            cmbChiNhanh.Enabled = true;
         }
 
         private void panelControl3_Paint(object sender, PaintEventArgs e)
@@ -77,6 +83,7 @@ namespace QLDSV_TC
         {
             vitri = lOPTINCHIBindingSource.Position;
             lOPTINCHIBindingSource.AddNew();
+            txtMaGV.Text = Program.username;
             DisableForm();
 
         }
@@ -96,7 +103,34 @@ namespace QLDSV_TC
                 return;
             }
             string strLenh = " DECLARE @result int " +
-                    "EXEC @result = sp_ktLopTinChi '" + txtNienKhoa.Text + "',N'" + txtMaMonHoc.Text;
+                    "EXEC @result = sp_ktLopTinChi '" + txtNienKhoa.Text + "', '" + seHocKy.Text + "','" + txtMaMonHoc.Text + "', '" + seNhom.Text
+                    + "' " + "SELECT 'result' = @result";
+            MessageBox.Show(strLenh, "", MessageBoxButtons.OK);
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            MessageBox.Show(Program.myReader.GetValue(0).ToString(), "", MessageBoxButtons.OK);
+            int result = int.Parse(Program.myReader.GetValue(0).ToString());
+            Program.myReader.Close();
+            int positionTenLopTC = lOPTINCHIBindingSource.Find("MAMH", txtMaMonHoc.Text);
+            if(result == '1' && (lOPTINCHIBindingSource.Position != positionTenLopTC))
+            {
+                MessageBox.Show("Lớp tín chỉ đã tồn tại", "", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+
+                lOPTINCHIBindingSource.EndEdit();
+                lOPTINCHIBindingSource.ResetCurrentItem();
+                this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTINCHITableAdapter.Update(this.dS.LOPTINCHI);
+                MessageBox.Show("Đã thêm lớp tín chỉ thành công!!!", " ", MessageBoxButtons.OK);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi thêm lớp tín chỉ" + ex.Message, "", MessageBoxButtons.OK);
+            }
 
         }
 
@@ -109,6 +143,12 @@ namespace QLDSV_TC
         {
             vitri = lOPTINCHIBindingSource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .Position;
             DisableForm();
+        }
+
+        private void btnPhucHoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            lOPTINCHIBindingSource.CancelEdit();
+            EnableForm();
         }
     }
 }

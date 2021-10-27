@@ -395,12 +395,14 @@ namespace QLDSV_TC
             this.statusStrip1.Size = new System.Drawing.Size(1011, 22);
             this.statusStrip1.TabIndex = 5;
             this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
             // 
             // MaSo
             // 
             this.MaSo.Name = "MaSo";
             this.MaSo.Size = new System.Drawing.Size(43, 17);
             this.MaSo.Text = "Mã Số:";
+            this.MaSo.Click += new System.EventHandler(this.MaSo_Click);
             // 
             // HoTen
             // 

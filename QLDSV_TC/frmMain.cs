@@ -59,5 +59,15 @@ namespace QLDSV_TC
                 f.Show();
             }
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MaSo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

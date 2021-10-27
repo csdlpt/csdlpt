@@ -36,12 +36,14 @@ namespace QLDSV_TC
             System.Windows.Forms.Label nHOMLabel;
             System.Windows.Forms.Label sOSVTOITHIEULabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopTInChi));
+            System.Windows.Forms.Label mAGVLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSuaa = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -73,12 +75,13 @@ namespace QLDSV_TC
             this.txtMaMonHoc = new DevExpress.XtraEditors.TextEdit();
             this.lOPTINCHITableAdapter = new QLDSV_TC.DSTableAdapters.LOPTINCHITableAdapter();
             this.tableAdapterManager = new QLDSV_TC.DSTableAdapters.TableAdapterManager();
-            this.btnSuaa = new DevExpress.XtraBars.BarButtonItem();
+            this.txtMaGV = new DevExpress.XtraEditors.TextEdit();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             nHOMLabel = new System.Windows.Forms.Label();
             sOSVTOITHIEULabel = new System.Windows.Forms.Label();
+            mAGVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -93,6 +96,7 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.seNhom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seHocKy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMonHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // nIENKHOALabel
@@ -109,7 +113,7 @@ namespace QLDSV_TC
             // 
             hOCKYLabel.AutoSize = true;
             hOCKYLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hOCKYLabel.Location = new System.Drawing.Point(100, 96);
+            hOCKYLabel.Location = new System.Drawing.Point(100, 107);
             hOCKYLabel.Name = "hOCKYLabel";
             hOCKYLabel.Size = new System.Drawing.Size(55, 17);
             hOCKYLabel.TabIndex = 2;
@@ -209,6 +213,15 @@ namespace QLDSV_TC
             this.btnPhucHoi.Id = 4;
             this.btnPhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhucHoi.ImageOptions.SvgImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
+            // 
+            // btnSuaa
+            // 
+            this.btnSuaa.Caption = "Sửa";
+            this.btnSuaa.Id = 5;
+            this.btnSuaa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSuaa.ImageOptions.SvgImage")));
+            this.btnSuaa.Name = "btnSuaa";
+            this.btnSuaa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaa_ItemClick);
             // 
             // bar3
             // 
@@ -228,7 +241,7 @@ namespace QLDSV_TC
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1067, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(1087, 24);
             // 
             // barDockControlBottom
             // 
@@ -236,7 +249,7 @@ namespace QLDSV_TC
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 568);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1067, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1087, 20);
             // 
             // barDockControlLeft
             // 
@@ -250,7 +263,7 @@ namespace QLDSV_TC
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1067, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(1087, 24);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 544);
             // 
@@ -268,7 +281,7 @@ namespace QLDSV_TC
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 24);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1067, 59);
+            this.panelControl1.Size = new System.Drawing.Size(1087, 59);
             this.panelControl1.TabIndex = 4;
             // 
             // label1
@@ -292,6 +305,8 @@ namespace QLDSV_TC
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(mAGVLabel);
+            this.panelControl2.Controls.Add(this.txtMaGV);
             this.panelControl2.Controls.Add(this.lOPTINCHIGridControl);
             this.panelControl2.Controls.Add(sOSVTOITHIEULabel);
             this.panelControl2.Controls.Add(this.seSVTT);
@@ -306,7 +321,7 @@ namespace QLDSV_TC
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 83);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1067, 505);
+            this.panelControl2.Size = new System.Drawing.Size(1087, 525);
             this.panelControl2.TabIndex = 5;
             // 
             // lOPTINCHIGridControl
@@ -351,8 +366,6 @@ namespace QLDSV_TC
             // 
             this.colMALTC.FieldName = "MALTC";
             this.colMALTC.Name = "colMALTC";
-            this.colMALTC.Visible = true;
-            this.colMALTC.VisibleIndex = 0;
             this.colMALTC.Width = 78;
             // 
             // colNIENKHOA
@@ -361,7 +374,7 @@ namespace QLDSV_TC
             this.colNIENKHOA.Name = "colNIENKHOA";
             this.colNIENKHOA.OptionsColumn.ReadOnly = true;
             this.colNIENKHOA.Visible = true;
-            this.colNIENKHOA.VisibleIndex = 1;
+            this.colNIENKHOA.VisibleIndex = 0;
             this.colNIENKHOA.Width = 115;
             // 
             // colHOCKY
@@ -370,7 +383,7 @@ namespace QLDSV_TC
             this.colHOCKY.Name = "colHOCKY";
             this.colHOCKY.OptionsColumn.ReadOnly = true;
             this.colHOCKY.Visible = true;
-            this.colHOCKY.VisibleIndex = 2;
+            this.colHOCKY.VisibleIndex = 1;
             this.colHOCKY.Width = 86;
             // 
             // colMAMH
@@ -379,7 +392,7 @@ namespace QLDSV_TC
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.ReadOnly = true;
             this.colMAMH.Visible = true;
-            this.colMAMH.VisibleIndex = 3;
+            this.colMAMH.VisibleIndex = 2;
             this.colMAMH.Width = 110;
             // 
             // colNHOM
@@ -388,7 +401,7 @@ namespace QLDSV_TC
             this.colNHOM.Name = "colNHOM";
             this.colNHOM.OptionsColumn.ReadOnly = true;
             this.colNHOM.Visible = true;
-            this.colNHOM.VisibleIndex = 4;
+            this.colNHOM.VisibleIndex = 3;
             this.colNHOM.Width = 59;
             // 
             // colMAGV
@@ -398,7 +411,7 @@ namespace QLDSV_TC
             this.colMAGV.OptionsColumn.AllowEdit = false;
             this.colMAGV.OptionsColumn.ReadOnly = true;
             this.colMAGV.Visible = true;
-            this.colMAGV.VisibleIndex = 5;
+            this.colMAGV.VisibleIndex = 4;
             this.colMAGV.Width = 119;
             // 
             // colMAKHOA
@@ -414,7 +427,7 @@ namespace QLDSV_TC
             this.colSOSVTOITHIEU.OptionsColumn.AllowEdit = false;
             this.colSOSVTOITHIEU.OptionsColumn.ReadOnly = true;
             this.colSOSVTOITHIEU.Visible = true;
-            this.colSOSVTOITHIEU.VisibleIndex = 6;
+            this.colSOSVTOITHIEU.VisibleIndex = 5;
             this.colSOSVTOITHIEU.Width = 74;
             // 
             // colHUYLOP
@@ -498,7 +511,7 @@ namespace QLDSV_TC
             0,
             0,
             0});
-            this.seHocKy.Location = new System.Drawing.Point(205, 89);
+            this.seHocKy.Location = new System.Drawing.Point(205, 100);
             this.seHocKy.MenuManager = this.barManager1;
             this.seHocKy.Name = "seHocKy";
             this.seHocKy.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -542,19 +555,32 @@ namespace QLDSV_TC
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // btnSuaa
+            // mAGVLabel
             // 
-            this.btnSuaa.Caption = "Sửa";
-            this.btnSuaa.Id = 5;
-            this.btnSuaa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
-            this.btnSuaa.Name = "btnSuaa";
-            this.btnSuaa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSuaa_ItemClick);
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAGVLabel.Location = new System.Drawing.Point(62, 60);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(93, 17);
+            mAGVLabel.TabIndex = 11;
+            mAGVLabel.Text = "Mã Giáo Viên:";
+            // 
+            // txtMaGV
+            // 
+            this.txtMaGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "MAGV", true));
+            this.txtMaGV.Location = new System.Drawing.Point(205, 53);
+            this.txtMaGV.MenuManager = this.barManager1;
+            this.txtMaGV.Name = "txtMaGV";
+            this.txtMaGV.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaGV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaGV.Size = new System.Drawing.Size(100, 24);
+            this.txtMaGV.TabIndex = 12;
             // 
             // frmLopTInChi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 588);
+            this.ClientSize = new System.Drawing.Size(1087, 588);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);
@@ -582,6 +608,7 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.seNhom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seHocKy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMonHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaGV.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -627,5 +654,6 @@ namespace QLDSV_TC
         private DevExpress.XtraGrid.Columns.GridColumn colHUYLOP;
         private DevExpress.XtraGrid.Columns.GridColumn colrowguid;
         private DevExpress.XtraBars.BarButtonItem btnSuaa;
+        private DevExpress.XtraEditors.TextEdit txtMaGV;
     }
 }
