@@ -141,6 +141,15 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>81</value>
+  </metadata>
+  <metadata name="lOPTINCHIBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>207, 17</value>
+  </metadata>
+  <metadata name="dS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 17</value>
+  </metadata>
   <assembly alias="DevExpress.Data.v19.2" name="DevExpress.Data.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="btnThem.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -202,6 +211,29 @@
         IC8+DQo8L3N2Zz4L
 </value>
   </data>
+  <data name="btnSua.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAL4DAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iQ3VzdG9taXplTWVyZ2VGaWVsZCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3Jv
+        dW5kOm5ldyAwIDAgMzIgMzIiPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLkJsYWNre2ZpbGw6
+        IzcyNzI3Mjt9CgkuQmx1ZXtmaWxsOiMxMTc3RDc7fQoJLlllbGxvd3tmaWxsOiNGRkIxMTU7fQo8L3N0
+        eWxlPg0KICA8cmVjdCB4PSI2IiB5PSIxMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIHJ4PSIwIiByeT0i
+        MCIgY2xhc3M9IlllbGxvdyIgLz4NCiAgPHBhdGggZD0iTTMxLjUsMjguOWwtNi4xLTYuMUMyNS44LDIx
+        LjksMjYsMjEsMjYsMjBjMC0zLjMtMi43LTYtNi02Yy0xLDAtMS45LDAuMi0yLjcsMC43bDQuMiw0LjIg
+        IGMwLjcsMC43LDAuNywxLjksMCwyLjZjLTAuNywwLjctMS45LDAuNy0yLjYsMGwtNC4yLTQuMkMxNC4y
+        LDE4LjEsMTQsMTksMTQsMjBjMCwzLjMsMi43LDYsNiw2YzEsMCwxLjktMC4yLDIuNy0wLjdsNi4xLDYu
+        MSAgYzAuNywwLjcsMS45LDAuNywyLjYsMEMzMi4yLDMwLjgsMzIuMiwyOS42LDMxLjUsMjguOXoiIGNs
+        YXNzPSJCbHVlIiAvPg0KICA8cGF0aCBkPSJNMjQuNiwzMEgxYy0wLjUsMC0xLTAuNS0xLTFWMWMwLTAu
+        NSwwLjUtMSwxLTFoMjRjMC41LDAsMSwwLjUsMSwxdjEzLjdjLTAuNi0wLjctMS4yLTEuMi0yLTEuNlYy
+        SDJ2MjZoMjAuNiAgTDI0LjYsMzB6IE0yMCw2SDZ2MmgxNFY2eiBNMTYsMTRINnYyaDEwVjE0eiBNMTIs
+        MjJINnYyaDZWMjJ6IE0xMiwxOEg2djJoNlYxOHoiIGNsYXNzPSJCbGFjayIgLz4NCjwvc3ZnPgs=
+</value>
+  </data>
   <data name="btnPhucHoi.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
@@ -243,38 +275,9 @@
         LjEsMjguMSwyNy42LDI3LjZ6IiBjbGFzcz0iQmx1ZSIgLz4NCiAgPC9nPg0KPC9zdmc+Cw==
 </value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>81</value>
-  </metadata>
-  <metadata name="lOPTINCHIBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>207, 17</value>
-  </metadata>
   <metadata name="dS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>142, 17</value>
   </metadata>
-  <data name="btnSua.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v19.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjE5LjIsIFZlcnNpb249MTkuMi41
-        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
-        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAL4DAAAC77u/
-        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
-        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
-        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
-        Y2U9InByZXNlcnZlIiBpZD0iQ3VzdG9taXplTWVyZ2VGaWVsZCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3Jv
-        dW5kOm5ldyAwIDAgMzIgMzIiPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLkJsYWNre2ZpbGw6
-        IzcyNzI3Mjt9CgkuQmx1ZXtmaWxsOiMxMTc3RDc7fQoJLlllbGxvd3tmaWxsOiNGRkIxMTU7fQo8L3N0
-        eWxlPg0KICA8cmVjdCB4PSI2IiB5PSIxMCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjIiIHJ4PSIwIiByeT0i
-        MCIgY2xhc3M9IlllbGxvdyIgLz4NCiAgPHBhdGggZD0iTTMxLjUsMjguOWwtNi4xLTYuMUMyNS44LDIx
-        LjksMjYsMjEsMjYsMjBjMC0zLjMtMi43LTYtNi02Yy0xLDAtMS45LDAuMi0yLjcsMC43bDQuMiw0LjIg
-        IGMwLjcsMC43LDAuNywxLjksMCwyLjZjLTAuNywwLjctMS45LDAuNy0yLjYsMGwtNC4yLTQuMkMxNC4y
-        LDE4LjEsMTQsMTksMTQsMjBjMCwzLjMsMi43LDYsNiw2YzEsMCwxLjktMC4yLDIuNy0wLjdsNi4xLDYu
-        MSAgYzAuNywwLjcsMS45LDAuNywyLjYsMEMzMi4yLDMwLjgsMzIuMiwyOS42LDMxLjUsMjguOXoiIGNs
-        YXNzPSJCbHVlIiAvPg0KICA8cGF0aCBkPSJNMjQuNiwzMEgxYy0wLjUsMC0xLTAuNS0xLTFWMWMwLTAu
-        NSwwLjUtMSwxLTFoMjRjMC41LDAsMSwwLjUsMSwxdjEzLjdjLTAuNi0wLjctMS4yLTEuMi0yLTEuNlYy
-        SDJ2MjZoMjAuNiAgTDI0LjYsMzB6IE0yMCw2SDZ2MmgxNFY2eiBNMTYsMTRINnYyaDEwVjE0eiBNMTIs
-        MjJINnYyaDZWMjJ6IE0xMiwxOEg2djJoNlYxOHoiIGNsYXNzPSJCbGFjayIgLz4NCjwvc3ZnPgs=
-</value>
-  </data>
   <metadata name="lOPTINCHITableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>395, 17</value>
   </metadata>

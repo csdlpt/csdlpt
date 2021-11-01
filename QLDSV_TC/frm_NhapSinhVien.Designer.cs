@@ -85,6 +85,7 @@ namespace QLDSV_TC
             this.colDANGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPASSWORD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrowguid1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.geNghiHoc = new DevExpress.XtraEditors.CheckEdit();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -114,6 +115,7 @@ namespace QLDSV_TC
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.geNghiHoc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mASVLabel
@@ -150,7 +152,7 @@ namespace QLDSV_TC
             // 
             pHAILabel.AutoSize = true;
             pHAILabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pHAILabel.Location = new System.Drawing.Point(76, 84);
+            pHAILabel.Location = new System.Drawing.Point(43, 84);
             pHAILabel.Name = "pHAILabel";
             pHAILabel.Size = new System.Drawing.Size(34, 17);
             pHAILabel.TabIndex = 6;
@@ -214,6 +216,7 @@ namespace QLDSV_TC
             this.btnThem.Id = 0;
             this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnXoa
             // 
@@ -221,6 +224,7 @@ namespace QLDSV_TC
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
@@ -228,6 +232,7 @@ namespace QLDSV_TC
             this.btnGhi.Id = 2;
             this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnPhucHoi
             // 
@@ -235,6 +240,7 @@ namespace QLDSV_TC
             this.btnPhucHoi.Id = 3;
             this.btnPhucHoi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhucHoi.ImageOptions.SvgImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnThoat
             // 
@@ -255,7 +261,7 @@ namespace QLDSV_TC
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 724);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 741);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1370, 0);
             // 
@@ -265,7 +271,7 @@ namespace QLDSV_TC
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 717);
             // 
             // barDockControlRight
             // 
@@ -273,7 +279,7 @@ namespace QLDSV_TC
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1370, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 717);
             // 
             // panelControl1
             // 
@@ -297,15 +303,18 @@ namespace QLDSV_TC
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(204, 6);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(271, 25);
             this.cmbChiNhanh.TabIndex = 0;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.geNghiHoc);
             this.panelControl2.Controls.Add(nGAYSINHLabel);
             this.panelControl2.Controls.Add(this.editDay);
             this.panelControl2.Controls.Add(dIACHILabel);
@@ -321,7 +330,7 @@ namespace QLDSV_TC
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 66);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1370, 130);
+            this.panelControl2.Size = new System.Drawing.Size(1370, 134);
             this.panelControl2.TabIndex = 5;
             // 
             // editDay
@@ -369,12 +378,12 @@ namespace QLDSV_TC
             // checkPhai
             // 
             this.checkPhai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sINHVIENBindingSource, "PHAI", true));
-            this.checkPhai.Location = new System.Drawing.Point(116, 82);
+            this.checkPhai.Location = new System.Drawing.Point(83, 82);
             this.checkPhai.MenuManager = this.barManager1;
             this.checkPhai.Name = "checkPhai";
             this.checkPhai.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkPhai.Properties.Appearance.Options.UseFont = true;
-            this.checkPhai.Properties.Caption = "Nữ";
+            this.checkPhai.Properties.Caption = "Nữ/Nam";
             this.checkPhai.Size = new System.Drawing.Size(75, 21);
             this.checkPhai.TabIndex = 7;
             // 
@@ -415,9 +424,9 @@ namespace QLDSV_TC
             // 
             this.panelControl3.Controls.Add(this.lOPGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl3.Location = new System.Drawing.Point(0, 196);
+            this.panelControl3.Location = new System.Drawing.Point(0, 200);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(348, 528);
+            this.panelControl3.Size = new System.Drawing.Size(348, 541);
             this.panelControl3.TabIndex = 6;
             // 
             // lOPGridControl
@@ -508,9 +517,9 @@ namespace QLDSV_TC
             // 
             this.panelControl4.Controls.Add(this.sINHVIENGridControl);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(354, 196);
+            this.panelControl4.Location = new System.Drawing.Point(354, 200);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(1016, 528);
+            this.panelControl4.Size = new System.Drawing.Size(1016, 541);
             this.panelControl4.TabIndex = 7;
             // 
             // sINHVIENGridControl
@@ -614,12 +623,25 @@ namespace QLDSV_TC
             this.colrowguid1.Name = "colrowguid1";
             this.colrowguid1.OptionsColumn.ReadOnly = true;
             // 
+            // geNghiHoc
+            // 
+            this.geNghiHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.sINHVIENBindingSource, "DANGHIHOC", true));
+            this.geNghiHoc.Enabled = false;
+            this.geNghiHoc.Location = new System.Drawing.Point(859, 93);
+            this.geNghiHoc.MenuManager = this.barManager1;
+            this.geNghiHoc.Name = "geNghiHoc";
+            this.geNghiHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.geNghiHoc.Properties.Appearance.Options.UseFont = true;
+            this.geNghiHoc.Properties.Caption = "Nghi Hoc";
+            this.geNghiHoc.Size = new System.Drawing.Size(75, 21);
+            this.geNghiHoc.TabIndex = 13;
+            // 
             // frm_NhapSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1370, 724);
+            this.ClientSize = new System.Drawing.Size(1370, 741);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -658,6 +680,7 @@ namespace QLDSV_TC
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sINHVIENGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.geNghiHoc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,5 +736,6 @@ namespace QLDSV_TC
         private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.TextEdit txtHo;
         private DevExpress.XtraEditors.TextEdit txtMaSV;
+        private DevExpress.XtraEditors.CheckEdit geNghiHoc;
     }
 }

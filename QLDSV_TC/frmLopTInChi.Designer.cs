@@ -358,13 +358,13 @@ namespace QLDSV_TC
             // ceHuyLop
             // 
             this.ceHuyLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "HUYLOP", true));
+            this.ceHuyLop.Enabled = false;
             this.ceHuyLop.Location = new System.Drawing.Point(204, 400);
             this.ceHuyLop.MenuManager = this.barManager1;
             this.ceHuyLop.Name = "ceHuyLop";
             this.ceHuyLop.Properties.Caption = "Hủy Lớp";
             this.ceHuyLop.Size = new System.Drawing.Size(75, 20);
             this.ceHuyLop.TabIndex = 16;
-            this.ceHuyLop.Visible = false;
             // 
             // lOPTINCHIBindingSource
             // 

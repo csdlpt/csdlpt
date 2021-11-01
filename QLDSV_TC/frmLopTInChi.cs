@@ -14,7 +14,6 @@ namespace QLDSV_TC
     public partial class frmLopTInChi : Form
     {
         public int vitri;
-        public int vitriSV;
         public string  macn = "";
         public string TenGV = Program.username;
         public frmLopTInChi()
@@ -146,6 +145,7 @@ namespace QLDSV_TC
                 this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOPTINCHITableAdapter.Update(this.dS.LOPTINCHI);
                 MessageBox.Show("Đã thêm lớp tín chỉ thành công!!!", " ", MessageBoxButtons.OK);
+                EnableForm();
             }
             catch(Exception ex)
             {

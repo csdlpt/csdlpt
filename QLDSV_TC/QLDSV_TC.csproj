@@ -88,6 +88,7 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    
     <EmbeddedResource Include="frmLopTInChi.resx">
       <DependentUpon>frmLopTInChi.cs</DependentUpon>
     </EmbeddedResource>

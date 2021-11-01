@@ -39,9 +39,9 @@ namespace QLDSV_TC
             this.rbtnGiaoVien = new System.Windows.Forms.RadioButton();
             this.rbtnSinhVien = new System.Windows.Forms.RadioButton();
             this.txtLogin = new DevExpress.XtraEditors.TextEdit();
-            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
+            this.txtPassword = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLogin.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword.Properties)).BeginInit();
             this.SuspendLayout();
@@ -151,15 +151,6 @@ namespace QLDSV_TC
             this.txtLogin.Size = new System.Drawing.Size(244, 24);
             this.txtLogin.TabIndex = 8;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(160, 242);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Properties.Appearance.Options.UseFont = true;
-            this.txtPassword.Size = new System.Drawing.Size(244, 24);
-            this.txtPassword.TabIndex = 8;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -180,12 +171,22 @@ namespace QLDSV_TC
             this.cmbChiNhanh.Size = new System.Drawing.Size(244, 25);
             this.cmbChiNhanh.TabIndex = 12;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(160, 246);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Properties.Appearance.Options.UseFont = true;
+            this.txtPassword.Properties.UseSystemPasswordChar = true;
+            this.txtPassword.Size = new System.Drawing.Size(244, 24);
+            this.txtPassword.TabIndex = 13;
+            // 
             // frmDangNhap
             // 
             this.ClientSize = new System.Drawing.Size(497, 386);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.cmbChiNhanh);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.rbtnSinhVien);
             this.Controls.Add(this.rbtnGiaoVien);
@@ -218,8 +219,8 @@ namespace QLDSV_TC
         private System.Windows.Forms.RadioButton rbtnGiaoVien;
         private System.Windows.Forms.RadioButton rbtnSinhVien;
         private DevExpress.XtraEditors.TextEdit txtLogin;
-        private DevExpress.XtraEditors.TextEdit txtPassword;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbChiNhanh;
+        private DevExpress.XtraEditors.TextEdit txtPassword;
     }
 }
