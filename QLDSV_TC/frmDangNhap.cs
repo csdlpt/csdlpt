@@ -142,7 +142,7 @@ namespace QLDSV_TC
                 Program.frmDN.Visible = false;
 
 
-                Program.frmChinh.MaSo.Text = "Mã: " + txtLogin.Text;
+                Program.frmChinh.MaSo.Text = txtLogin.Text;
                 Program.frmChinh.HoTen.Text = "Họ và Tên: " + Program.mHoten;
                 Program.frmChinh.Nhom.Text = "Nhóm: " + Program.mGroup;
 

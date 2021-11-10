@@ -69,5 +69,17 @@ namespace QLDSV_TC
         {
 
         }
+
+        private void btnDangKyLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDky_LopTinChi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmDky_LopTinChi f = new frmDky_LopTinChi();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

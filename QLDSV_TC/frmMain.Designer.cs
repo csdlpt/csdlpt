@@ -162,6 +162,7 @@ namespace QLDSV_TC
             this.btnDangKyLTC.Id = 7;
             this.btnDangKyLTC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangKyLTC.ImageOptions.SvgImage")));
             this.btnDangKyLTC.Name = "btnDangKyLTC";
+            this.btnDangKyLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangKyLTC_ItemClick);
             // 
             // btnNhapDiem
             // 

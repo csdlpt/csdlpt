@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS.cs">
+      <DependentUpon>DS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -64,6 +67,12 @@
     </Compile>
     <Compile Include="DangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDky_LopTinChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDky_LopTinChi.Designer.cs">
+      <DependentUpon>frmDky_LopTinChi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLopTInChi.cs">
       <SubType>Form</SubType>
@@ -88,7 +97,9 @@
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    
+    <EmbeddedResource Include="frmDky_LopTinChi.resx">
+      <DependentUpon>frmDky_LopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLopTInChi.resx">
       <DependentUpon>frmLopTInChi.cs</DependentUpon>
     </EmbeddedResource>
