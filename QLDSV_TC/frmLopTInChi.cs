@@ -59,7 +59,7 @@ namespace QLDSV_TC
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
             txtMaGV.Enabled = txtMaKhoa.Enabled = false ;
-            txtMaMonHoc.Enabled = txtNienKhoa.Enabled = seHocKy.Enabled = seNhom.Enabled = seSVTT.Enabled = true;
+            cmbMaMH.Enabled = cmbNienKhoa.Enabled = cmbHocKy.Enabled = cmbNhom.Enabled = seSVTT.Enabled = true;
             cmbChiNhanh.Enabled = false;
         }
 
@@ -67,7 +67,7 @@ namespace QLDSV_TC
         {
             lOPTINCHIGridControl.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
-            txtMaGV.Enabled = txtMaKhoa.Enabled = txtMaMonHoc.Enabled = txtNienKhoa.Enabled = seHocKy.Enabled = seNhom.Enabled = seSVTT.Enabled = false;
+            txtMaGV.Enabled = txtMaKhoa.Enabled = cmbMaMH.Enabled = cmbNienKhoa.Enabled = cmbHocKy.Enabled = cmbNhom.Enabled = seSVTT.Enabled = false;
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
             cmbChiNhanh.Enabled = false;
         }
@@ -109,16 +109,16 @@ namespace QLDSV_TC
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(txtMaMonHoc.Text.Trim() == "")
+            if(cmbMaMH.Text.Trim() == "")
             {
                 MessageBox.Show("Mã môn học không được để trống!!", "", MessageBoxButtons.OK);
-                txtMaMonHoc.Focus();
+                cmbMaMH.Focus();
                 return;
             }
-            if(txtNienKhoa.Text.Trim() == "")
+            if(cmbNienKhoa.Text.Trim() == "")
             {
                 MessageBox.Show("Nien khoa khong được để trống!!!", "", MessageBoxButtons.OK);
-                txtNienKhoa.Focus();
+                cmbNienKhoa.Focus();
                 return;
             }
             //string strLenh = " DECLARE @result int " +

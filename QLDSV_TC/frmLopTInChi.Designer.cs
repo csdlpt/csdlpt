@@ -73,12 +73,12 @@ namespace QLDSV_TC
             this.colHUYLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.seSVTT = new DevExpress.XtraEditors.SpinEdit();
-            this.txtNienKhoa = new DevExpress.XtraEditors.TextEdit();
-            this.seNhom = new DevExpress.XtraEditors.SpinEdit();
-            this.seHocKy = new DevExpress.XtraEditors.SpinEdit();
-            this.txtMaMonHoc = new DevExpress.XtraEditors.TextEdit();
             this.lOPTINCHITableAdapter = new QLDSV_TC.DSTableAdapters.LOPTINCHITableAdapter();
             this.tableAdapterManager = new QLDSV_TC.DSTableAdapters.TableAdapterManager();
+            this.cmbNienKhoa = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbHocKy = new System.Windows.Forms.ComboBox();
+            this.cmbNhom = new System.Windows.Forms.ComboBox();
+            this.cmbMaMH = new System.Windows.Forms.ComboBox();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
@@ -99,10 +99,7 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seSVTT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNienKhoa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seNhom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seHocKy.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMonHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // nIENKHOALabel
@@ -333,6 +330,10 @@ namespace QLDSV_TC
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cmbMaMH);
+            this.panelControl2.Controls.Add(this.cmbNhom);
+            this.panelControl2.Controls.Add(this.cmbHocKy);
+            this.panelControl2.Controls.Add(this.cmbNienKhoa);
             this.panelControl2.Controls.Add(this.ceHuyLop);
             this.panelControl2.Controls.Add(mAKHOALabel);
             this.panelControl2.Controls.Add(this.txtMaKhoa);
@@ -341,14 +342,10 @@ namespace QLDSV_TC
             this.panelControl2.Controls.Add(this.lOPTINCHIGridControl);
             this.panelControl2.Controls.Add(sOSVTOITHIEULabel);
             this.panelControl2.Controls.Add(this.seSVTT);
-            this.panelControl2.Controls.Add(this.txtNienKhoa);
             this.panelControl2.Controls.Add(nHOMLabel);
             this.panelControl2.Controls.Add(nIENKHOALabel);
-            this.panelControl2.Controls.Add(this.seNhom);
-            this.panelControl2.Controls.Add(this.seHocKy);
             this.panelControl2.Controls.Add(mAMHLabel);
             this.panelControl2.Controls.Add(hOCKYLabel);
-            this.panelControl2.Controls.Add(this.txtMaMonHoc);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 83);
             this.panelControl2.Name = "panelControl2";
@@ -384,7 +381,7 @@ namespace QLDSV_TC
             this.txtMaKhoa.Name = "txtMaKhoa";
             this.txtMaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(100, 24);
+            this.txtMaKhoa.Size = new System.Drawing.Size(113, 24);
             this.txtMaKhoa.TabIndex = 14;
             // 
             // txtMaGV
@@ -395,7 +392,7 @@ namespace QLDSV_TC
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaGV.Properties.Appearance.Options.UseFont = true;
-            this.txtMaGV.Size = new System.Drawing.Size(100, 24);
+            this.txtMaGV.Size = new System.Drawing.Size(113, 24);
             this.txtMaGV.TabIndex = 12;
             // 
             // lOPTINCHIGridControl
@@ -533,84 +530,6 @@ namespace QLDSV_TC
             this.seSVTT.TabIndex = 9;
             this.seSVTT.EditValueChanged += new System.EventHandler(this.seSVTT_EditValueChanged);
             // 
-            // txtNienKhoa
-            // 
-            this.txtNienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "NIENKHOA", true));
-            this.txtNienKhoa.Location = new System.Drawing.Point(204, 4);
-            this.txtNienKhoa.MenuManager = this.barManager1;
-            this.txtNienKhoa.Name = "txtNienKhoa";
-            this.txtNienKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNienKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtNienKhoa.Size = new System.Drawing.Size(134, 24);
-            this.txtNienKhoa.TabIndex = 1;
-            // 
-            // seNhom
-            // 
-            this.seNhom.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "NHOM", true));
-            this.seNhom.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.seNhom.Location = new System.Drawing.Point(204, 228);
-            this.seNhom.MenuManager = this.barManager1;
-            this.seNhom.Name = "seNhom";
-            this.seNhom.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seNhom.Properties.Appearance.Options.UseFont = true;
-            this.seNhom.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.seNhom.Properties.MaxValue = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.seNhom.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.seNhom.Size = new System.Drawing.Size(100, 24);
-            this.seNhom.TabIndex = 7;
-            // 
-            // seHocKy
-            // 
-            this.seHocKy.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "HOCKY", true));
-            this.seHocKy.EditValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.seHocKy.Location = new System.Drawing.Point(204, 172);
-            this.seHocKy.MenuManager = this.barManager1;
-            this.seHocKy.Name = "seHocKy";
-            this.seHocKy.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.seHocKy.Properties.Appearance.Options.UseFont = true;
-            this.seHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.seHocKy.Properties.MaxValue = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.seHocKy.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.seHocKy.Size = new System.Drawing.Size(100, 24);
-            this.seHocKy.TabIndex = 3;
-            // 
-            // txtMaMonHoc
-            // 
-            this.txtMaMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "MAMH", true));
-            this.txtMaMonHoc.Location = new System.Drawing.Point(204, 284);
-            this.txtMaMonHoc.MenuManager = this.barManager1;
-            this.txtMaMonHoc.Name = "txtMaMonHoc";
-            this.txtMaMonHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMonHoc.Properties.Appearance.Options.UseFont = true;
-            this.txtMaMonHoc.Size = new System.Drawing.Size(134, 24);
-            this.txtMaMonHoc.TabIndex = 5;
-            // 
             // lOPTINCHITableAdapter
             // 
             this.lOPTINCHITableAdapter.ClearBeforeFill = true;
@@ -628,6 +547,72 @@ namespace QLDSV_TC
             this.tableAdapterManager.MONHOCTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // cmbNienKhoa
+            // 
+            this.cmbNienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.lOPTINCHIBindingSource, "NIENKHOA", true));
+            this.cmbNienKhoa.Location = new System.Drawing.Point(204, 20);
+            this.cmbNienKhoa.MenuManager = this.barManager1;
+            this.cmbNienKhoa.Name = "cmbNienKhoa";
+            this.cmbNienKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNienKhoa.Properties.Appearance.Options.UseFont = true;
+            this.cmbNienKhoa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbNienKhoa.Properties.Items.AddRange(new object[] {
+            "2021-2022",
+            "2022-2023",
+            "2023-2024",
+            "2024-2025",
+            "2025-2026",
+            "2026-2027",
+            "2027-2028",
+            "2028-2029"});
+            this.cmbNienKhoa.Size = new System.Drawing.Size(113, 24);
+            this.cmbNienKhoa.TabIndex = 17;
+            // 
+            // cmbHocKy
+            // 
+            this.cmbHocKy.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPTINCHIBindingSource, "HOCKY", true));
+            this.cmbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbHocKy.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHocKy.FormattingEnabled = true;
+            this.cmbHocKy.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.cmbHocKy.Location = new System.Drawing.Point(204, 175);
+            this.cmbHocKy.Name = "cmbHocKy";
+            this.cmbHocKy.Size = new System.Drawing.Size(113, 25);
+            this.cmbHocKy.TabIndex = 18;
+            // 
+            // cmbNhom
+            // 
+            this.cmbNhom.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPTINCHIBindingSource, "NHOM", true));
+            this.cmbNhom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNhom.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbNhom.FormattingEnabled = true;
+            this.cmbNhom.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.cmbNhom.Location = new System.Drawing.Point(205, 231);
+            this.cmbNhom.Name = "cmbNhom";
+            this.cmbNhom.Size = new System.Drawing.Size(112, 25);
+            this.cmbNhom.TabIndex = 19;
+            // 
+            // cmbMaMH
+            // 
+            this.cmbMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOPTINCHIBindingSource, "MAMH", true));
+            this.cmbMaMH.DataSource = this.lOPTINCHIBindingSource;
+            this.cmbMaMH.DisplayMember = "MAMH";
+            this.cmbMaMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMaMH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaMH.FormattingEnabled = true;
+            this.cmbMaMH.Location = new System.Drawing.Point(205, 287);
+            this.cmbMaMH.Name = "cmbMaMH";
+            this.cmbMaMH.Size = new System.Drawing.Size(190, 25);
+            this.cmbMaMH.TabIndex = 20;
+            this.cmbMaMH.ValueMember = "MAMH";
             // 
             // frmLopTInChi
             // 
@@ -660,10 +645,7 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seSVTT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNienKhoa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seNhom.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seHocKy.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMonHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -692,10 +674,6 @@ namespace QLDSV_TC
         private DSTableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.SpinEdit seSVTT;
-        private DevExpress.XtraEditors.SpinEdit seNhom;
-        private DevExpress.XtraEditors.TextEdit txtMaMonHoc;
-        private DevExpress.XtraEditors.SpinEdit seHocKy;
-        private DevExpress.XtraEditors.TextEdit txtNienKhoa;
         private DevExpress.XtraGrid.GridControl lOPTINCHIGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMALTC;
@@ -712,5 +690,9 @@ namespace QLDSV_TC
         private DevExpress.XtraEditors.TextEdit txtMaGV;
         private DevExpress.XtraEditors.TextEdit txtMaKhoa;
         private DevExpress.XtraEditors.CheckEdit ceHuyLop;
+        private System.Windows.Forms.ComboBox cmbMaMH;
+        private System.Windows.Forms.ComboBox cmbNhom;
+        private System.Windows.Forms.ComboBox cmbHocKy;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbNienKhoa;
     }
 }
