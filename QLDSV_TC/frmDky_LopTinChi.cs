@@ -29,7 +29,7 @@ namespace QLDSV_TC
             String strlenh = "EXEC SP_LAY_DS_MONHOC_NKHK '" + cmbNienKhoa.Text + "','" + int.Parse(cmbHocKy.Text) + "'";
             dt_ds_ltc = Program.ExecSqlDataTable(strlenh);
             gcDSMH.DataSource = dt_ds_ltc;
-            MessageBox.Show(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MALTC").ToString());
+            //MessageBox.Show(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MALTC").ToString());
             
             try
             {
@@ -77,7 +77,20 @@ namespace QLDSV_TC
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-           
+            String strlenh1 = "DECLARE @result int " 
+                    + "EXEC @result = SP_KT_MH_KHI_DKY  '"
+                    + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MAMH").ToString()+ "','"
+                    + cmbNienKhoa.Text + "','"
+                    +cmbHocKy.Text +"' "+" SELECT 'result' = @result ";
+
+
+            bool result = Program.ExecSqlNonQuery(strlenh1);
+            
+            if(result == true)
+            {
+              MessageBox.Show("Bạn đã đăng ký môn học này rồi!!", "", MessageBoxButtons.OK);
+               return;
+            }
             try
             {
                 String strlenh = "EXEC SP_INSERT_DKY_MONHOC '" + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MALTC") + "','" + Program.frmChinh.MaSo.Text + "'";
