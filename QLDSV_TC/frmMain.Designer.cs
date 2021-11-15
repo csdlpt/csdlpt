@@ -191,6 +191,7 @@ namespace QLDSV_TC
             this.btnDSSVDKLTC.Id = 11;
             this.btnDSSVDKLTC.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSSVDKLTC.ImageOptions.SvgImage")));
             this.btnDSSVDKLTC.Name = "btnDSSVDKLTC";
+            this.btnDSSVDKLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSSVDKLTC_ItemClick);
             // 
             // btnBDMLTC
             // 

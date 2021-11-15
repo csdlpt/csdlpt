@@ -81,5 +81,17 @@ namespace QLDSV_TC
                 f.Show();
             }
         }
+
+        private void btnDSSVDKLTC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmDS_SV_DKY_LTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmDS_SV_DKY_LTC f = new frmDS_SV_DKY_LTC();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
