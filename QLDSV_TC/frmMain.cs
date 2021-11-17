@@ -93,5 +93,78 @@ namespace QLDSV_TC
                 f.Show();
             }
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+
+            btnLop.Enabled = true;
+            btnSinhVien.Enabled = true;
+            btnMonHoc.Enabled = true; // Lop Hoc
+            btnNhapDiem.Enabled = true;
+            btnDangKyLTC.Enabled = true;
+            btnDSDHPLTC.Enabled = true;
+            btnBDTK.Enabled = true;
+            btnDongHocPhi.Enabled = true;
+            btnLopTinChi.Enabled = true;
+            btnPhieuDiem.Enabled = true;
+            btnBDMLTC.Enabled = true;
+            btnDSLTC.Enabled = true;
+            btnBDTK.Enabled = true;
+
+            if (Program.mGroup == "PKT")
+            {
+                btnLop.Enabled = false;
+                btnSinhVien.Enabled = false;
+                btnMonHoc.Enabled = false; // Lop Hoc
+                btnNhapDiem.Enabled = false;
+                btnDangKyLTC.Enabled = false;
+                btnDSDHPLTC.Enabled = true;
+                btnBDTK.Enabled = false;
+                btnDongHocPhi.Enabled = true;
+                btnLopTinChi.Enabled = false;
+                btnPhieuDiem.Enabled = false;
+                btnBDMLTC.Enabled = false;
+                btnDSLTC.Enabled = false;
+                btnBDTK.Enabled = false;
+            }
+            else if (Program.mGroup == "KHOA")
+            {
+                btnDongHocPhi.Enabled = false;
+                btnDSDHPLTC.Enabled = false;
+            }
+            else if (Program.mGroup == "SV")
+            {
+                btnLop.Enabled = false;
+                btnSinhVien.Enabled = false;
+                btnMonHoc.Enabled = false; // Lop Hoc
+                btnNhapDiem.Enabled = false;
+               
+                btnDSDHPLTC.Enabled = false;
+                btnBDTK.Enabled = false;
+                btnDongHocPhi.Enabled = false;
+                btnLopTinChi.Enabled = false;
+                btnPhieuDiem.Enabled = false;
+                btnBDMLTC.Enabled = false;
+                btnDSLTC.Enabled = false;
+                btnBDTK.Enabled = false;
+            }
+            else if (Program.mGroup == "PGV")
+            {
+                btnDongHocPhi.Enabled = false;
+                btnDSDHPLTC.Enabled = false;
+            }
+        }
+
+        private void btnPhieuDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frm_PhieuDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frm_PhieuDiem f = new frm_PhieuDiem();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

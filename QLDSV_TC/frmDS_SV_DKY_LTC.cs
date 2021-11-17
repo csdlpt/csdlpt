@@ -43,9 +43,9 @@ namespace QLDSV_TC
             cmbChiNhanh.SelectedIndex = Program.mChinhanh;
             
 
-            if (Program.mGroup == "PGV")
+            if (Program.mGroup != "PGV")
             {
-                cmbChiNhanh.Enabled = true;
+                cmbChiNhanh.Enabled = false;
             }
 
 
@@ -74,6 +74,8 @@ namespace QLDSV_TC
             {
                 this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+                this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+                this.kHOATableAdapter.Fill(this.dS.KHOA);
 
                 macn = ((DataRowView)mONHOCBindingSource[0])["MAKHOA"].ToString();
             }
@@ -86,13 +88,13 @@ namespace QLDSV_TC
                 //+ cmbNienKhoa.Text +"','"+cmbHocKy.Text +"', '"+cmbMaMH.Text+"','"+cmbNhom.Text+"'";
                 // dt_ds_sv_dk_ltc = Program.ExecSqlDataTable(strlenh);
                 rp_DS_SV_DK_MH_LTC report = new rp_DS_SV_DK_MH_LTC(cmbNienKhoa.Text, Int32.Parse(cmbHocKy.Text),
-                                                                   cmbMaMH.SelectedValue.ToString(), Int32.Parse(cmbNhom.Text));
-            report.xrKhoa.Text = "KHOA" + cmbChiNhanh.DisplayMember.ToString();
+                                                                   txtMamh.Text, Int32.Parse(cmbNhom.Text));
+            report.xrKhoa.Text = "KHOA" + txtTenKhoa.Text; ;
             report.xrNienKhoa.Text = "Niên Khóa: " + cmbNienKhoa.Text;
-            report.xrHocKy.Text = "Học Ký: " + cmbHocKy.Text;
-            report.xrMonHoc.Text = " Môn Học: " + cmbMaMH.DisplayMember.ToString();
+            report.xrHocKy.Text = "Học Kỳ: " + cmbHocKy.Text;
+            report.xrMonHoc.Text = " Môn Học: " + cmbTenMH.Text;
             report.xrNhom.Text = "Nhóm: " + cmbNhom.Text;
-            MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
+            //MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
             ReportPrintTool print = new ReportPrintTool(report);
             print.ShowPreviewDialog();
             

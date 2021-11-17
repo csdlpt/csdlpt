@@ -206,6 +206,7 @@ namespace QLDSV_TC
             this.btnPhieuDiem.Id = 13;
             this.btnPhieuDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhieuDiem.ImageOptions.SvgImage")));
             this.btnPhieuDiem.Name = "btnPhieuDiem";
+            this.btnPhieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuDiem_ItemClick);
             // 
             // btnDSDHPLTC
             // 
@@ -436,6 +437,7 @@ namespace QLDSV_TC
             this.Name = "frmMain";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.statusStrip1.ResumeLayout(false);

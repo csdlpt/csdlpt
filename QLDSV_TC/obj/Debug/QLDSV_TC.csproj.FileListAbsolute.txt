@@ -192,3 +192,5 @@ E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\bin\Debug\ja\DevExpress.Diagram.
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frmDS_SV_DKY_LTC.resources
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.rp_DS_SV_DK_MH_LTC.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_PhieuDiem.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.rp_PhieuDiem.resources
