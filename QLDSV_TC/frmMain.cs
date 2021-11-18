@@ -166,5 +166,17 @@ namespace QLDSV_TC
                 f.Show();
             }
         }
+
+        private void btnBDTK_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frm_Report_BDTK));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frm_Report_BDTK f = new frm_Report_BDTK();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }
