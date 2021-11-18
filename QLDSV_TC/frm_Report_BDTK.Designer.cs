@@ -103,7 +103,7 @@ namespace QLDSV_TC
             // 
             // btnInDS
             // 
-            this.btnInDS.Location = new System.Drawing.Point(74, 321);
+            this.btnInDS.Location = new System.Drawing.Point(142, 281);
             this.btnInDS.Name = "btnInDS";
             this.btnInDS.Size = new System.Drawing.Size(125, 35);
             this.btnInDS.TabIndex = 8;
@@ -289,7 +289,7 @@ namespace QLDSV_TC
             // tENLOPLabel
             // 
             tENLOPLabel.AutoSize = true;
-            tENLOPLabel.Location = new System.Drawing.Point(31, 169);
+            tENLOPLabel.Location = new System.Drawing.Point(31, 171);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(62, 17);
             tENLOPLabel.TabIndex = 10;
@@ -301,13 +301,15 @@ namespace QLDSV_TC
             this.txtTenLop.Enabled = false;
             this.txtTenLop.Location = new System.Drawing.Point(142, 168);
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(233, 20);
+            this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLop.Properties.Appearance.Options.UseFont = true;
+            this.txtTenLop.Size = new System.Drawing.Size(233, 24);
             this.txtTenLop.TabIndex = 11;
             // 
             // mAKHOALabel
             // 
             mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Location = new System.Drawing.Point(585, 62);
+            mAKHOALabel.Location = new System.Drawing.Point(580, 62);
             mAKHOALabel.Name = "mAKHOALabel";
             mAKHOALabel.Size = new System.Drawing.Size(64, 17);
             mAKHOALabel.TabIndex = 11;
@@ -319,7 +321,9 @@ namespace QLDSV_TC
             this.cmbMaKhoa.Enabled = false;
             this.cmbMaKhoa.Location = new System.Drawing.Point(670, 59);
             this.cmbMaKhoa.Name = "cmbMaKhoa";
-            this.cmbMaKhoa.Size = new System.Drawing.Size(100, 20);
+            this.cmbMaKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaKhoa.Properties.Appearance.Options.UseFont = true;
+            this.cmbMaKhoa.Size = new System.Drawing.Size(100, 24);
             this.cmbMaKhoa.TabIndex = 12;
             // 
             // kHOAHOCLabel
@@ -337,7 +341,9 @@ namespace QLDSV_TC
             this.txtKhoaHoc.Enabled = false;
             this.txtKhoaHoc.Location = new System.Drawing.Point(142, 213);
             this.txtKhoaHoc.Name = "txtKhoaHoc";
-            this.txtKhoaHoc.Size = new System.Drawing.Size(155, 20);
+            this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoaHoc.Size = new System.Drawing.Size(155, 24);
             this.txtKhoaHoc.TabIndex = 13;
             // 
             // kHOABindingSource
