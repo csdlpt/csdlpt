@@ -110,9 +110,11 @@ namespace QLDSV_TC
             btnBDMLTC.Enabled = true;
             btnDSLTC.Enabled = true;
             btnBDTK.Enabled = true;
+            btnDSSVDKLTC.Enabled = true;
 
             if (Program.mGroup == "PKT")
             {
+                btnDSSVDKLTC.Enabled = false;
                 btnLop.Enabled = false;
                 btnSinhVien.Enabled = false;
                 btnMonHoc.Enabled = false; // Lop Hoc
@@ -138,7 +140,7 @@ namespace QLDSV_TC
                 btnSinhVien.Enabled = false;
                 btnMonHoc.Enabled = false; // Lop Hoc
                 btnNhapDiem.Enabled = false;
-               
+                btnDSSVDKLTC.Enabled = false;
                 btnDSDHPLTC.Enabled = false;
                 btnBDTK.Enabled = false;
                 btnDongHocPhi.Enabled = false;
@@ -174,6 +176,18 @@ namespace QLDSV_TC
             else
             {
                 frm_Report_BDTK f = new frm_Report_BDTK();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDongHocPhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(from_DongHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                from_DongHocPhi f = new from_DongHocPhi();
                 f.MdiParent = this;
                 f.Show();
             }

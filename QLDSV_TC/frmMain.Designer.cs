@@ -177,6 +177,7 @@ namespace QLDSV_TC
             this.btnDongHocPhi.Id = 9;
             this.btnDongHocPhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDongHocPhi.ImageOptions.SvgImage")));
             this.btnDongHocPhi.Name = "btnDongHocPhi";
+            this.btnDongHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDongHocPhi_ItemClick);
             // 
             // btnDSLTC
             // 
