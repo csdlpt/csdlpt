@@ -41,13 +41,13 @@ namespace QLDSV_TC
             this.lOPTableAdapter = new QLDSV_TC.DSTableAdapters.LOPTableAdapter();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sINHVIENGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,10 +84,11 @@ namespace QLDSV_TC
             this.cmbChiNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(152, 37);
-            this.cmbChiNhanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbChiNhanh.Margin = new System.Windows.Forms.Padding(4);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(392, 25);
             this.cmbChiNhanh.TabIndex = 4;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged_1);
             // 
             // dS
             // 
@@ -120,8 +121,8 @@ namespace QLDSV_TC
             // btnInDS
             // 
             this.btnInDS.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInDS.Location = new System.Drawing.Point(647, 35);
-            this.btnInDS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInDS.Location = new System.Drawing.Point(670, 20);
+            this.btnInDS.Margin = new System.Windows.Forms.Padding(4);
             this.btnInDS.Name = "btnInDS";
             this.btnInDS.Size = new System.Drawing.Size(155, 44);
             this.btnInDS.TabIndex = 11;
@@ -144,7 +145,7 @@ namespace QLDSV_TC
             this.lOPGridControl.Location = new System.Drawing.Point(3, 84);
             this.lOPGridControl.MainView = this.gridView1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(345, 503);
+            this.lOPGridControl.Size = new System.Drawing.Size(388, 503);
             this.lOPGridControl.TabIndex = 11;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -159,6 +160,42 @@ namespace QLDSV_TC
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
             // 
+            // colMALOP
+            // 
+            this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.Name = "colMALOP";
+            this.colMALOP.OptionsColumn.ReadOnly = true;
+            this.colMALOP.Visible = true;
+            this.colMALOP.VisibleIndex = 0;
+            this.colMALOP.Width = 77;
+            // 
+            // colTENLOP
+            // 
+            this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.Name = "colTENLOP";
+            this.colTENLOP.OptionsColumn.ReadOnly = true;
+            this.colTENLOP.Visible = true;
+            this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 140;
+            // 
+            // colKHOAHOC
+            // 
+            this.colKHOAHOC.FieldName = "KHOAHOC";
+            this.colKHOAHOC.Name = "colKHOAHOC";
+            this.colKHOAHOC.OptionsColumn.ReadOnly = true;
+            this.colKHOAHOC.Visible = true;
+            this.colKHOAHOC.VisibleIndex = 2;
+            this.colKHOAHOC.Width = 83;
+            // 
+            // colMAKHOA
+            // 
+            this.colMAKHOA.FieldName = "MAKHOA";
+            this.colMAKHOA.Name = "colMAKHOA";
+            this.colMAKHOA.OptionsColumn.ReadOnly = true;
+            this.colMAKHOA.Visible = true;
+            this.colMAKHOA.VisibleIndex = 3;
+            this.colMAKHOA.Width = 20;
+            // 
             // sINHVIENBindingSource1
             // 
             this.sINHVIENBindingSource1.DataMember = "FK_SINHVIEN_LOP";
@@ -167,10 +204,10 @@ namespace QLDSV_TC
             // sINHVIENGridControl
             // 
             this.sINHVIENGridControl.DataSource = this.sINHVIENBindingSource1;
-            this.sINHVIENGridControl.Location = new System.Drawing.Point(354, 170);
+            this.sINHVIENGridControl.Location = new System.Drawing.Point(397, 84);
             this.sINHVIENGridControl.MainView = this.gridView2;
             this.sINHVIENGridControl.Name = "sINHVIENGridControl";
-            this.sINHVIENGridControl.Size = new System.Drawing.Size(711, 417);
+            this.sINHVIENGridControl.Size = new System.Drawing.Size(668, 503);
             this.sINHVIENGridControl.TabIndex = 11;
             this.sINHVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -190,38 +227,6 @@ namespace QLDSV_TC
             this.gridView2.GridControl = this.sINHVIENGridControl;
             this.gridView2.Name = "gridView2";
             // 
-            // colMALOP
-            // 
-            this.colMALOP.FieldName = "MALOP";
-            this.colMALOP.Name = "colMALOP";
-            this.colMALOP.OptionsColumn.ReadOnly = true;
-            this.colMALOP.Visible = true;
-            this.colMALOP.VisibleIndex = 0;
-            // 
-            // colTENLOP
-            // 
-            this.colTENLOP.FieldName = "TENLOP";
-            this.colTENLOP.Name = "colTENLOP";
-            this.colTENLOP.OptionsColumn.ReadOnly = true;
-            this.colTENLOP.Visible = true;
-            this.colTENLOP.VisibleIndex = 1;
-            // 
-            // colKHOAHOC
-            // 
-            this.colKHOAHOC.FieldName = "KHOAHOC";
-            this.colKHOAHOC.Name = "colKHOAHOC";
-            this.colKHOAHOC.OptionsColumn.ReadOnly = true;
-            this.colKHOAHOC.Visible = true;
-            this.colKHOAHOC.VisibleIndex = 2;
-            // 
-            // colMAKHOA
-            // 
-            this.colMAKHOA.FieldName = "MAKHOA";
-            this.colMAKHOA.Name = "colMAKHOA";
-            this.colMAKHOA.OptionsColumn.ReadOnly = true;
-            this.colMAKHOA.Visible = true;
-            this.colMAKHOA.VisibleIndex = 3;
-            // 
             // colMASV
             // 
             this.colMASV.FieldName = "MASV";
@@ -229,6 +234,7 @@ namespace QLDSV_TC
             this.colMASV.OptionsColumn.ReadOnly = true;
             this.colMASV.Visible = true;
             this.colMASV.VisibleIndex = 0;
+            this.colMASV.Width = 105;
             // 
             // colHO
             // 
@@ -237,6 +243,7 @@ namespace QLDSV_TC
             this.colHO.OptionsColumn.ReadOnly = true;
             this.colHO.Visible = true;
             this.colHO.VisibleIndex = 1;
+            this.colHO.Width = 185;
             // 
             // colTEN
             // 
@@ -245,6 +252,7 @@ namespace QLDSV_TC
             this.colTEN.OptionsColumn.ReadOnly = true;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
+            this.colTEN.Width = 101;
             // 
             // colPHAI
             // 
@@ -253,6 +261,7 @@ namespace QLDSV_TC
             this.colPHAI.OptionsColumn.ReadOnly = true;
             this.colPHAI.Visible = true;
             this.colPHAI.VisibleIndex = 3;
+            this.colPHAI.Width = 63;
             // 
             // colDIACHI
             // 
@@ -261,14 +270,14 @@ namespace QLDSV_TC
             this.colDIACHI.OptionsColumn.ReadOnly = true;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 4;
+            this.colDIACHI.Width = 79;
             // 
             // colNGAYSINH
             // 
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.Name = "colNGAYSINH";
             this.colNGAYSINH.OptionsColumn.ReadOnly = true;
-            this.colNGAYSINH.Visible = true;
-            this.colNGAYSINH.VisibleIndex = 5;
+            this.colNGAYSINH.Width = 68;
             // 
             // colMALOP1
             // 
@@ -276,36 +285,35 @@ namespace QLDSV_TC
             this.colMALOP1.Name = "colMALOP1";
             this.colMALOP1.OptionsColumn.ReadOnly = true;
             this.colMALOP1.Visible = true;
-            this.colMALOP1.VisibleIndex = 6;
+            this.colMALOP1.VisibleIndex = 5;
+            this.colMALOP1.Width = 110;
             // 
             // colDANGHIHOC
             // 
             this.colDANGHIHOC.FieldName = "DANGHIHOC";
             this.colDANGHIHOC.Name = "colDANGHIHOC";
             this.colDANGHIHOC.OptionsColumn.ReadOnly = true;
-            this.colDANGHIHOC.Visible = true;
-            this.colDANGHIHOC.VisibleIndex = 7;
+            this.colDANGHIHOC.Width = 68;
             // 
             // colPASSWORD
             // 
             this.colPASSWORD.FieldName = "PASSWORD";
             this.colPASSWORD.Name = "colPASSWORD";
             this.colPASSWORD.OptionsColumn.ReadOnly = true;
-            this.colPASSWORD.Visible = true;
-            this.colPASSWORD.VisibleIndex = 8;
+            this.colPASSWORD.Width = 73;
             // 
             // frm_PhieuDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 607);
+            this.ClientSize = new System.Drawing.Size(1008, 607);
             this.Controls.Add(this.sINHVIENGridControl);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.btnInDS);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbChiNhanh);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_PhieuDiem";
             this.Text = "frm_PhieuDiem";
             this.Load += new System.EventHandler(this.frm_PhieuDiem_Load);

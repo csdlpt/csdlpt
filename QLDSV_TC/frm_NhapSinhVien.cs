@@ -176,7 +176,7 @@ namespace QLDSV_TC
                 this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sINHVIENTableAdapter.Update(this.dS.SINHVIEN);
                
-                MessageBox.Show("Thêm lớp tín chỉ thành công!!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Thêm sinh viên thành công!!", "", MessageBoxButtons.OK);
                 EnableForm();
 
             }

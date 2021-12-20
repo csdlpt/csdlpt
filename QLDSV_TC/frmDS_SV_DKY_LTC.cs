@@ -51,7 +51,27 @@ namespace QLDSV_TC
 
         }
 
-        private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void btnInBaoCao_Click(object sender, EventArgs e)
+        {
+            
+                //string strlenh = "EXEC SP_REPORT_DS_SV_DK_LTC  '" 
+                //+ cmbNienKhoa.Text +"','"+cmbHocKy.Text +"', '"+cmbMaMH.Text+"','"+cmbNhom.Text+"'";
+                // dt_ds_sv_dk_ltc = Program.ExecSqlDataTable(strlenh);
+                rp_DS_SV_DK_MH_LTC report = new rp_DS_SV_DK_MH_LTC(cmbNienKhoa.Text, Int32.Parse(cmbHocKy.Text),
+                                                                   txtMamh.Text, Int32.Parse(cmbNhom.Text));
+            report.xrKhoa.Text = "KHOA" + txtTenKhoa.Text; ;
+            report.xrNienKhoa.Text = "Niên Khóa: " + cmbNienKhoa.Text;
+            report.xrHocKy.Text = "Học Kỳ: " + cmbHocKy.Text;
+            report.xrMonHoc.Text = " Môn Học: " + cmbTenMH.Text;
+            report.xrNhom.Text = "Nhóm: " + cmbNhom.Text;
+            //MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
+            ReportPrintTool print = new ReportPrintTool(report);
+            print.ShowPreviewDialog();
+            
+        }
+
+        private void cmbChiNhanh_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView") return;
             Program.servername = cmbChiNhanh.SelectedValue.ToString();
@@ -77,27 +97,8 @@ namespace QLDSV_TC
                 this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
                 this.kHOATableAdapter.Fill(this.dS.KHOA);
 
-                macn = ((DataRowView)mONHOCBindingSource[0])["MAKHOA"].ToString();
+                macn = ((DataRowView)kHOABindingSource[0])["MAKHOA"].ToString();
             }
-        }
-
-        private void btnInBaoCao_Click(object sender, EventArgs e)
-        {
-            
-                //string strlenh = "EXEC SP_REPORT_DS_SV_DK_LTC  '" 
-                //+ cmbNienKhoa.Text +"','"+cmbHocKy.Text +"', '"+cmbMaMH.Text+"','"+cmbNhom.Text+"'";
-                // dt_ds_sv_dk_ltc = Program.ExecSqlDataTable(strlenh);
-                rp_DS_SV_DK_MH_LTC report = new rp_DS_SV_DK_MH_LTC(cmbNienKhoa.Text, Int32.Parse(cmbHocKy.Text),
-                                                                   txtMamh.Text, Int32.Parse(cmbNhom.Text));
-            report.xrKhoa.Text = "KHOA" + txtTenKhoa.Text; ;
-            report.xrNienKhoa.Text = "Niên Khóa: " + cmbNienKhoa.Text;
-            report.xrHocKy.Text = "Học Kỳ: " + cmbHocKy.Text;
-            report.xrMonHoc.Text = " Môn Học: " + cmbTenMH.Text;
-            report.xrNhom.Text = "Nhóm: " + cmbNhom.Text;
-            //MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
-            ReportPrintTool print = new ReportPrintTool(report);
-            print.ShowPreviewDialog();
-            
         }
     }
 }

@@ -197,3 +197,8 @@ E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.rp_PhieuDiem.
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_Report_BDTK.resources
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.rp_BDTK.resources
 E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.from_DongHocPhi.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.fmt_Lop.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_NhapDiem.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_MonHoc.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_GiangVien.resources
+E:\SinhVien\Ky6.1\csdlpt\DOAN\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.frm_TaoTaiKhoan.resources

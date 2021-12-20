@@ -32,16 +32,19 @@ namespace QLDSV_TC
 
         private void frm_Report_BDTK_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.KHOA' table. You can move, or remove it, as needed.
-            this.kHOATableAdapter.Fill(this.dS.KHOA);
+            
 
             dS.EnforceConstraints = false;
             // TODO: This line of code loads data into the 'dS.LOP' table. You can move, or remove it, as needed.
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.dS.LOP);
 
+            // TODO: This line of code loads data into the 'dS.KHOA' table. You can move, or remove it, as needed.
             this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.kHOATableAdapter.Fill(this.dS.KHOA);
+
+           // this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
+           // this.kHOATableAdapter.Fill(this.dS.KHOA);
 
             macn = ((DataRowView)lOPBindingSource[0])["MAKHOA"].ToString();
             cmbChiNhanh.DataSource = Program.bds_dspm; // Sao chép bds_dspm từ form dn qua
@@ -57,7 +60,22 @@ namespace QLDSV_TC
 
         }
 
-        private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+       
+
+
+        private void btnInDS_Click(object sender, EventArgs e)
+        {
+            rp_BDTK report = new rp_BDTK(cmbMaLop.Text);
+            report.xrKhoa.Text = "Khoa: " + txtTenKhoa.Text; ;
+            report.xrKhoaHoc.Text = "Niên Khóa: " + txtKhoaHoc.Text;
+            report.xrMaLop.Text = "Mã Lớp: " + cmbMaLop.Text;
+            report.xrLop.Text = "Lớp: " + txtTenLop.Text;
+            //MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
+            ReportPrintTool print = new ReportPrintTool(report);
+            print.ShowPreviewDialog();
+        }
+
+        private void cmbChiNhanh_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView") return;
             Program.servername = cmbChiNhanh.SelectedValue.ToString();
@@ -83,21 +101,8 @@ namespace QLDSV_TC
                 this.kHOATableAdapter.Connection.ConnectionString = Program.connstr;
                 this.kHOATableAdapter.Fill(this.dS.KHOA);
 
-                macn = ((DataRowView)lOPBindingSource[0])["MAKHOA"].ToString();
+                macn = ((DataRowView)kHOABindingSource[0])["MAKHOA"].ToString();
             }
-        }
-
-
-        private void btnInDS_Click(object sender, EventArgs e)
-        {
-            rp_BDTK report = new rp_BDTK(cmbMaLop.Text);
-            report.xrKhoa.Text = "KHOA" + txtTenKhoa.Text; ;
-            report.xrKhoaHoc.Text = "Niên Khóa: " + txtKhoaHoc.Text;
-            report.xrMaLop.Text = " Môn Học: " + cmbMaLop.Text;
-            report.xrLop.Text = "Nhóm: " + txtTenLop.Text;
-            //MessageBox.Show(cmbNienKhoa.Text + Int32.Parse(cmbHocKy.Text) + cmbMaMH.SelectedValue.ToString() + Int32.Parse(cmbNhom.Text));
-            ReportPrintTool print = new ReportPrintTool(report);
-            print.ShowPreviewDialog();
         }
     }
 }

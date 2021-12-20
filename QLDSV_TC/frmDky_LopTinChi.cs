@@ -77,34 +77,49 @@ namespace QLDSV_TC
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            String strlenh1 = "DECLARE @result int " 
+            
+            string strlenh1 = "DECLARE @result int " 
                     + "EXEC @result = SP_KT_MH_KHI_DKY  '"
+                    + txtMasv.Text + "','"
                     + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MAMH").ToString()+ "','"
                     + cmbNienKhoa.Text + "','"
-                    +cmbHocKy.Text +"' "+" SELECT 'result' = @result ";
+                    +int.Parse(cmbHocKy.Text) +"' "+" SELECT 'result' = @result ";
 
+            Program.myReader = Program.ExecSqlDataReader(strlenh1);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
 
-            bool result = Program.ExecSqlNonQuery(strlenh1);
-            
-            if(result == true)
+            int result = int.Parse(Program.myReader.GetValue(0).ToString());
+            Program.myReader.Close();
+            if (result == 1)
             {
-              MessageBox.Show("Bạn đã đăng ký môn học này rồi!!", "", MessageBoxButtons.OK);
-               return;
+                MessageBox.Show("Bạn đã đăng ký môn học này rồi", "", MessageBoxButtons.OK);
+                return;
+
             }
+
+           
+
+
             try
             {
-                String strlenh = "EXEC SP_INSERT_DKY_MONHOC '" + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MALTC") + "','" + Program.frmChinh.MaSo.Text + "'";
+                String strlenh = "EXEC SP_INSERT_DKY_MONHOC '" + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MALTC") 
+                                                                + "','" + Program.frmChinh.MaSo.Text + "'";
                  Program.ExecSqlNonQuery(strlenh);
                 this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.Fill(this.dS.SP_LAY_DS_MONHOC_DADKY_NKHK, Program.frmChinh.MaSo.Text, cmbNienKhoa.Text, int.Parse(cmbHocKy.Text));
+                MessageBox.Show("Đăng ký thành công môn học " + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TENMH").ToString());
 
+
+                
+                dt_ds_ltc = Program.ExecSqlDataTable("EXEC SP_LAY_DS_MONHOC_NKHK '" + cmbNienKhoa.Text + "','" + int.Parse(cmbHocKy.Text) + "'");
+                gcDSMH.DataSource = dt_ds_ltc;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Đăng ký thành công môn học " + gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TENMH").ToString());
-        }
+             }
 
         private void btnHuyDangKy_Click(object sender, EventArgs e)
         {
@@ -115,7 +130,9 @@ namespace QLDSV_TC
                 Program.ExecSqlNonQuery(strlenh);
                 this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.Fill(this.dS.SP_LAY_DS_MONHOC_DADKY_NKHK, Program.frmChinh.MaSo.Text, cmbNienKhoa.Text, int.Parse(cmbHocKy.Text));
-                MessageBox.Show("Hủy đăng ký thành công môn học " + gridView2.GetRowCellValue(gridView2.FocusedRowHandle, "TENMH").ToString());
+                MessageBox.Show("Bạn đã hủy đăng ký thành công môn học ", "", MessageBoxButtons.OK);
+                dt_ds_ltc = Program.ExecSqlDataTable("EXEC SP_LAY_DS_MONHOC_NKHK '" + cmbNienKhoa.Text + "','" + int.Parse(cmbHocKy.Text) + "'");
+                gcDSMH.DataSource = dt_ds_ltc;
             }
             catch (Exception ex)
             {

@@ -36,12 +36,14 @@ namespace QLDSV_TC
             System.Windows.Forms.Label mAMHLabel1;
             System.Windows.Forms.Label label2;
             this.panel1 = new System.Windows.Forms.Panel();
-            this.mAKHOATextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtMamh = new DevExpress.XtraEditors.TextEdit();
+            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS = new QLDSV_TC.DS();
+            this.txtTenKhoa = new DevExpress.XtraEditors.TextEdit();
+            this.kHOABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mAKHOATextEdit = new DevExpress.XtraEditors.TextEdit();
             this.btnInBaoCao = new System.Windows.Forms.Button();
             this.cmbTenMH = new System.Windows.Forms.ComboBox();
-            this.mONHOCBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbNhom = new System.Windows.Forms.ComboBox();
             this.cmbHocKy = new System.Windows.Forms.ComboBox();
             this.cmbNienKhoa = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -52,21 +54,19 @@ namespace QLDSV_TC
             this.mONHOCTableAdapter = new QLDSV_TC.DSTableAdapters.MONHOCTableAdapter();
             this.kHOATableAdapter = new QLDSV_TC.DSTableAdapters.KHOATableAdapter();
             this.tableAdapterManager = new QLDSV_TC.DSTableAdapters.TableAdapterManager();
-            this.txtTenKhoa = new DevExpress.XtraEditors.TextEdit();
-            this.txtMamh = new DevExpress.XtraEditors.TextEdit();
             nHOMLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
             mAKHOALabel1 = new System.Windows.Forms.Label();
             mAMHLabel1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHOATextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMamh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenKhoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOATextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // nHOMLabel
@@ -98,6 +98,26 @@ namespace QLDSV_TC
             mAKHOALabel1.TabIndex = 27;
             mAKHOALabel1.Text = "Mã Khoa:";
             // 
+            // mAMHLabel1
+            // 
+            mAMHLabel1.AutoSize = true;
+            mAMHLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            mAMHLabel1.Location = new System.Drawing.Point(287, 218);
+            mAMHLabel1.Name = "mAMHLabel1";
+            mAMHLabel1.Size = new System.Drawing.Size(82, 17);
+            mAMHLabel1.TabIndex = 30;
+            mAMHLabel1.Text = "Mã môn học";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label2.Location = new System.Drawing.Point(515, 54);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(63, 17);
+            label2.TabIndex = 30;
+            label2.Text = "Tên khoa";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(label2);
@@ -123,25 +143,52 @@ namespace QLDSV_TC
             this.panel1.Size = new System.Drawing.Size(1067, 333);
             this.panel1.TabIndex = 0;
             // 
-            // mAKHOATextEdit
+            // txtMamh
             // 
-            this.mAKHOATextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKHOA", true));
-            this.mAKHOATextEdit.Location = new System.Drawing.Point(602, 110);
-            this.mAKHOATextEdit.Name = "mAKHOATextEdit";
-            this.mAKHOATextEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mAKHOATextEdit.Properties.Appearance.Options.UseFont = true;
-            this.mAKHOATextEdit.Size = new System.Drawing.Size(100, 24);
-            this.mAKHOATextEdit.TabIndex = 28;
+            this.txtMamh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.mONHOCBindingSource, "MAMH", true));
+            this.txtMamh.Location = new System.Drawing.Point(407, 217);
+            this.txtMamh.Name = "txtMamh";
+            this.txtMamh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMamh.Properties.Appearance.Options.UseFont = true;
+            this.txtMamh.Size = new System.Drawing.Size(123, 24);
+            this.txtMamh.TabIndex = 31;
+            // 
+            // mONHOCBindingSource
+            // 
+            this.mONHOCBindingSource.DataMember = "MONHOC";
+            this.mONHOCBindingSource.DataSource = this.dS;
+            // 
+            // dS
+            // 
+            this.dS.DataSetName = "DS";
+            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtTenKhoa
+            // 
+            this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKHOA", true));
+            this.txtTenKhoa.Enabled = false;
+            this.txtTenKhoa.Location = new System.Drawing.Point(602, 51);
+            this.txtTenKhoa.Name = "txtTenKhoa";
+            this.txtTenKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtTenKhoa.Size = new System.Drawing.Size(183, 24);
+            this.txtTenKhoa.TabIndex = 30;
             // 
             // kHOABindingSource
             // 
             this.kHOABindingSource.DataMember = "KHOA";
             this.kHOABindingSource.DataSource = this.dS;
             // 
-            // dS
+            // mAKHOATextEdit
             // 
-            this.dS.DataSetName = "DS";
-            this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.mAKHOATextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "MAKHOA", true));
+            this.mAKHOATextEdit.Enabled = false;
+            this.mAKHOATextEdit.Location = new System.Drawing.Point(602, 110);
+            this.mAKHOATextEdit.Name = "mAKHOATextEdit";
+            this.mAKHOATextEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mAKHOATextEdit.Properties.Appearance.Options.UseFont = true;
+            this.mAKHOATextEdit.Size = new System.Drawing.Size(100, 24);
+            this.mAKHOATextEdit.TabIndex = 28;
             // 
             // btnInBaoCao
             // 
@@ -165,11 +212,6 @@ namespace QLDSV_TC
             this.cmbTenMH.Size = new System.Drawing.Size(255, 25);
             this.cmbTenMH.TabIndex = 26;
             this.cmbTenMH.ValueMember = "TENMH";
-            // 
-            // mONHOCBindingSource
-            // 
-            this.mONHOCBindingSource.DataMember = "MONHOC";
-            this.mONHOCBindingSource.DataSource = this.dS;
             // 
             // cmbNhom
             // 
@@ -255,6 +297,7 @@ namespace QLDSV_TC
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(295, 25);
             this.cmbChiNhanh.TabIndex = 2;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged_1);
             // 
             // mONHOCTableAdapter
             // 
@@ -278,46 +321,6 @@ namespace QLDSV_TC
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // txtTenKhoa
-            // 
-            this.txtTenKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.kHOABindingSource, "TENKHOA", true));
-            this.txtTenKhoa.Location = new System.Drawing.Point(602, 51);
-            this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtTenKhoa.Size = new System.Drawing.Size(183, 24);
-            this.txtTenKhoa.TabIndex = 30;
-            // 
-            // mAMHLabel1
-            // 
-            mAMHLabel1.AutoSize = true;
-            mAMHLabel1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAMHLabel1.Location = new System.Drawing.Point(287, 218);
-            mAMHLabel1.Name = "mAMHLabel1";
-            mAMHLabel1.Size = new System.Drawing.Size(82, 17);
-            mAMHLabel1.TabIndex = 30;
-            mAMHLabel1.Text = "Mã môn học";
-            // 
-            // txtMamh
-            // 
-            this.txtMamh.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.mONHOCBindingSource, "MAMH", true));
-            this.txtMamh.Location = new System.Drawing.Point(407, 217);
-            this.txtMamh.Name = "txtMamh";
-            this.txtMamh.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMamh.Properties.Appearance.Options.UseFont = true;
-            this.txtMamh.Size = new System.Drawing.Size(123, 24);
-            this.txtMamh.TabIndex = 31;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(515, 54);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(63, 17);
-            label2.TabIndex = 30;
-            label2.Text = "Tên khoa";
-            // 
             // frmDS_SV_DKY_LTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -331,13 +334,13 @@ namespace QLDSV_TC
             this.Load += new System.EventHandler(this.frmDS_SV_DKY_LTC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mAKHOATextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMamh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mONHOCBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenKhoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOABindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOATextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

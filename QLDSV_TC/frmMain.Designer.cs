@@ -118,6 +118,7 @@ namespace QLDSV_TC
             this.btnDangKy.Id = 1;
             this.btnDangKy.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangKy.ImageOptions.SvgImage")));
             this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangKy_ItemClick);
             // 
             // btnDangXuat
             // 
@@ -125,6 +126,7 @@ namespace QLDSV_TC
             this.btnDangXuat.Id = 2;
             this.btnDangXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangXuat.ImageOptions.SvgImage")));
             this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // btnLop
             // 
@@ -132,6 +134,7 @@ namespace QLDSV_TC
             this.btnLop.Id = 3;
             this.btnLop.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnLop.ImageOptions.SvgImage")));
             this.btnLop.Name = "btnLop";
+            this.btnLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLop_ItemClick);
             // 
             // btnSinhVien
             // 
@@ -147,6 +150,7 @@ namespace QLDSV_TC
             this.btnMonHoc.Id = 5;
             this.btnMonHoc.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnMonHoc.ImageOptions.SvgImage")));
             this.btnMonHoc.Name = "btnMonHoc";
+            this.btnMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMonHoc_ItemClick);
             // 
             // btnLopTinChi
             // 
@@ -170,6 +174,7 @@ namespace QLDSV_TC
             this.btnNhapDiem.Id = 8;
             this.btnNhapDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNhapDiem.ImageOptions.SvgImage")));
             this.btnNhapDiem.Name = "btnNhapDiem";
+            this.btnNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiem_ItemClick);
             // 
             // btnDongHocPhi
             // 

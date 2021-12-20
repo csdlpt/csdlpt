@@ -15,7 +15,7 @@ namespace QLDSV_TC
     {
         public int vitri;
         public string  macn = "";
-        public string TenGV = Program.username;
+        
         public frmLopTInChi()
         {
             InitializeComponent();
@@ -32,10 +32,14 @@ namespace QLDSV_TC
         private void frmLopTInChi_Load(object sender, EventArgs e)
         {
             dS.EnforceConstraints = false;
+            // TODO: This line of code loads data into the 'dS.MONHOC' table. You can move, or remove it, as needed.
+            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.mONHOCTableAdapter.Fill(this.dS.MONHOC);
+            
             // TODO: This line of code loads data into the 'dS.LOPTINCHI' table. You can move, or remove it, as needed.
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.dS.LOPTINCHI);
-            txtMaGV.Text = TenGV;
+  
 
             macn = ((DataRowView)lOPTINCHIBindingSource[0])["MAKHOA"].ToString();
             cmbChiNhanh.DataSource = Program.bds_dspm; // Sao chép bds_dspm từ form dn qua
@@ -56,9 +60,9 @@ namespace QLDSV_TC
         private void DisableForm()
         {
             lOPTINCHIGridControl.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled =  false;
+            btnThem.Enabled = btnSuaa.Enabled = btnXoa.Enabled =  false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
-            txtMaGV.Enabled = txtMaKhoa.Enabled = false ;
+            txtMaKhoa.Enabled = false ;
             cmbMaMH.Enabled = cmbNienKhoa.Enabled = cmbHocKy.Enabled = cmbNhom.Enabled = seSVTT.Enabled = true;
             cmbChiNhanh.Enabled = false;
         }
@@ -66,10 +70,10 @@ namespace QLDSV_TC
         private void EnableForm()
         {
             lOPTINCHIGridControl.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
-            txtMaGV.Enabled = txtMaKhoa.Enabled = cmbMaMH.Enabled = cmbNienKhoa.Enabled = cmbHocKy.Enabled = cmbNhom.Enabled = seSVTT.Enabled = false;
+            btnThem.Enabled = btnSuaa.Enabled = btnXoa.Enabled = true;
+             txtMaKhoa.Enabled = cmbMaMH.Enabled = cmbNienKhoa.Enabled = cmbHocKy.Enabled = cmbNhom.Enabled = seSVTT.Enabled = false;
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
-            cmbChiNhanh.Enabled = false;
+            cmbChiNhanh.Enabled = true;
         }
 
         private void panelControl3_Paint(object sender, PaintEventArgs e)
@@ -99,7 +103,7 @@ namespace QLDSV_TC
         {
             vitri = lOPTINCHIBindingSource.Position;
             lOPTINCHIBindingSource.AddNew();
-            txtMaGV.Text = Program.username;
+            
             txtMaKhoa.Text = macn;
             ceHuyLop.Checked = false;
             
@@ -109,47 +113,60 @@ namespace QLDSV_TC
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(cmbMaMH.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã môn học không được để trống!!", "", MessageBoxButtons.OK);
-                cmbMaMH.Focus();
-                return;
-            }
+            
             if(cmbNienKhoa.Text.Trim() == "")
             {
                 MessageBox.Show("Nien khoa khong được để trống!!!", "", MessageBoxButtons.OK);
                 cmbNienKhoa.Focus();
                 return;
             }
-            //string strLenh = " DECLARE @result int " +
-            //        "EXEC @result = sp_ktLopTinChi '" + txtNienKhoa.Text + "', '" + seHocKy.Text + "','" + txtMaMonHoc.Text + "', '" + seNhom.Text
-            //        + "' " + "SELECT 'result' = @result";
-           
-            //Program.myReader = Program.ExecSqlDataReader(strLenh);
-            //if (Program.myReader == null) return;
-            //Program.myReader.Read();
+            if (int.Parse(seSVTT.Text) <= 0)
+            {
+                MessageBox.Show("Số sinh viên tối thiểu phải lớn hơn 0 !!!", "", MessageBoxButtons.OK);
+                seSVTT.Focus();
+                return;
+            }
+            string strLenh = " DECLARE @result int " +
+                    "EXEC @result = sp_ktLopTinChi '" + cmbNienKhoa.Text + "', '" + int.Parse(cmbHocKy.Text) + "','" + cmbMaMH.SelectedValue.ToString() + "', '" + int.Parse(cmbNhom.Text)
+                    + "' " + "SELECT 'result' = @result";
+
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+
+            int result = int.Parse(Program.myReader.GetValue(0).ToString());
+            Program.myReader.Close();
+            int positionTenLopTC = lOPTINCHIBindingSource.Find("MAMH", cmbMaMH.Text);
             
-            //int result = int.Parse(Program.myReader.GetValue(0).ToString());
-            //Program.myReader.Close();
-            //int positionTenLopTC = lOPTINCHIBindingSource.Find("MAMH", txtMaMonHoc.Text);
-            //if(result == '1' && (lOPTINCHIBindingSource.Position != positionTenLopTC))
-            //{
-            //    MessageBox.Show("Lớp tín chỉ đã tồn tại", "", MessageBoxButtons.OK);
-            //    return;
-            //}
+            if (result == 1 )
+            {
+                MessageBox.Show("Lớp tín chỉ đã tồn tại", "", MessageBoxButtons.OK);
+                return;
+                this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTINCHITableAdapter.Fill(this.dS.LOPTINCHI);
+            }
             try
             {
-
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["NIENKHOA"] = cmbNienKhoa.Text;
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["HOCKY"] = cmbHocKy.Text;
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["NHOM"] = cmbNhom.Text;
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["MAMH"] = cmbMaMH.SelectedValue.ToString();
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["MAGV"] = Program.username;
+                ((DataRowView)lOPTINCHIBindingSource[lOPTINCHIBindingSource.Position])["SOSVTOITHIEU"] = seSVTT.Text;
                 lOPTINCHIBindingSource.EndEdit();
                 lOPTINCHIBindingSource.ResetCurrentItem();
+               
                 this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOPTINCHITableAdapter.Update(this.dS.LOPTINCHI);
-                MessageBox.Show("Đã thêm lớp tín chỉ thành công!!!", " ", MessageBoxButtons.OK);
+                MessageBox.Show("Đã ghi thành công!!!", " ", MessageBoxButtons.OK);
+                lOPTINCHIBindingSource.Position = vitri;
                 EnableForm();
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Lỗi thêm lớp tín chỉ" + ex.Message, "", MessageBoxButtons.OK);
+                this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTINCHITableAdapter.Fill(this.dS.LOPTINCHI);
             }
 
         }
@@ -161,7 +178,7 @@ namespace QLDSV_TC
 
         private void btnSuaa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            vitri = lOPTINCHIBindingSource                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        .Position;
+            vitri = lOPTINCHIBindingSource.Position;
             DisableForm();
         }
 
@@ -197,6 +214,26 @@ namespace QLDSV_TC
 
                 macn = ((DataRowView)lOPTINCHIBindingSource[0])["MAKHOA"].ToString();
             }
+        }
+
+        private void mAMHLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMaMH_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mAKHOALabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaKhoa_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

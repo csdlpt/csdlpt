@@ -51,7 +51,15 @@ namespace QLDSV_TC
             this.tableAdapterManager = new QLDSV_TC.DSTableAdapters.TableAdapterManager();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl = new DevExpress.XtraGrid.GridControl();
             this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMALTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENGV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNHOM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHUYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter = new QLDSV_TC.DSTableAdapters.SP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter();
             this.fillToolStrip = new System.Windows.Forms.ToolStrip();
             this.mASVToolStripLabel = new System.Windows.Forms.ToolStripLabel();
@@ -61,14 +69,8 @@ namespace QLDSV_TC
             this.hOCKYToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.hOCKYToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENGV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNHOM = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colHUYDANGKY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALTC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -80,10 +82,10 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource)).BeginInit();
-            this.fillToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.fillToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -224,16 +226,18 @@ namespace QLDSV_TC
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.label5);
             this.panelControl1.Controls.Add(this.gcDSMH);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 62);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1370, 205);
+            this.panelControl1.Size = new System.Drawing.Size(1370, 207);
             this.panelControl1.TabIndex = 1;
             // 
             // gcDSMH
             // 
             this.gcDSMH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcDSMH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcDSMH.Location = new System.Drawing.Point(2, 2);
             this.gcDSMH.MainView = this.gridView1;
             this.gcDSMH.Name = "gcDSMH";
@@ -279,100 +283,38 @@ namespace QLDSV_TC
             // panelControl2
             // 
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 267);
+            this.panelControl2.Location = new System.Drawing.Point(0, 269);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1370, 57);
+            this.panelControl2.Size = new System.Drawing.Size(1370, 27);
             this.panelControl2.TabIndex = 2;
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.label6);
             this.panelControl3.Controls.Add(this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl3.Location = new System.Drawing.Point(0, 324);
+            this.panelControl3.Location = new System.Drawing.Point(0, 296);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1370, 366);
             this.panelControl3.TabIndex = 3;
-            // 
-            // sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource
-            // 
-            this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource.DataMember = "SP_LAY_DS_MONHOC_DADKY_NKHK";
-            this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource.DataSource = this.dS;
-            // 
-            // sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter
-            // 
-            this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.ClearBeforeFill = true;
-            // 
-            // fillToolStrip
-            // 
-            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mASVToolStripLabel,
-            this.mASVToolStripTextBox,
-            this.nIENKHOAToolStripLabel,
-            this.nIENKHOAToolStripTextBox,
-            this.hOCKYToolStripLabel,
-            this.hOCKYToolStripTextBox,
-            this.fillToolStripButton});
-            this.fillToolStrip.Location = new System.Drawing.Point(0, 690);
-            this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(1370, 25);
-            this.fillToolStrip.TabIndex = 4;
-            this.fillToolStrip.Text = "fillToolStrip";
-            // 
-            // mASVToolStripLabel
-            // 
-            this.mASVToolStripLabel.Name = "mASVToolStripLabel";
-            this.mASVToolStripLabel.Size = new System.Drawing.Size(42, 22);
-            this.mASVToolStripLabel.Text = "MASV:";
-            // 
-            // mASVToolStripTextBox
-            // 
-            this.mASVToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.mASVToolStripTextBox.Name = "mASVToolStripTextBox";
-            this.mASVToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // nIENKHOAToolStripLabel
-            // 
-            this.nIENKHOAToolStripLabel.Name = "nIENKHOAToolStripLabel";
-            this.nIENKHOAToolStripLabel.Size = new System.Drawing.Size(70, 22);
-            this.nIENKHOAToolStripLabel.Text = "NIENKHOA:";
-            // 
-            // nIENKHOAToolStripTextBox
-            // 
-            this.nIENKHOAToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nIENKHOAToolStripTextBox.Name = "nIENKHOAToolStripTextBox";
-            this.nIENKHOAToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // hOCKYToolStripLabel
-            // 
-            this.hOCKYToolStripLabel.Name = "hOCKYToolStripLabel";
-            this.hOCKYToolStripLabel.Size = new System.Drawing.Size(50, 22);
-            this.hOCKYToolStripLabel.Text = "HOCKY:";
-            // 
-            // hOCKYToolStripTextBox
-            // 
-            this.hOCKYToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.hOCKYToolStripTextBox.Name = "hOCKYToolStripTextBox";
-            this.hOCKYToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillToolStripButton
-            // 
-            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillToolStripButton.Name = "fillToolStripButton";
-            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
-            this.fillToolStripButton.Text = "Fill";
-            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click_1);
             // 
             // sP_LAY_DS_MONHOC_DADKY_NKHKGridControl
             // 
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.DataSource = this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource;
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Location = new System.Drawing.Point(2, 2);
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.MainView = this.gridView2;
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Name = "sP_LAY_DS_MONHOC_DADKY_NKHKGridControl";
-            this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Size = new System.Drawing.Size(1366, 272);
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.Size = new System.Drawing.Size(1366, 300);
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.TabIndex = 0;
             this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            // 
+            // sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource
+            // 
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource.DataMember = "SP_LAY_DS_MONHOC_DADKY_NKHK";
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource.DataSource = this.dS;
             // 
             // gridView2
             // 
@@ -385,6 +327,14 @@ namespace QLDSV_TC
             this.colHUYDANGKY});
             this.gridView2.GridControl = this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl;
             this.gridView2.Name = "gridView2";
+            // 
+            // colMALTC
+            // 
+            this.colMALTC.FieldName = "MALTC";
+            this.colMALTC.Name = "colMALTC";
+            this.colMALTC.OptionsColumn.ReadOnly = true;
+            this.colMALTC.Visible = true;
+            this.colMALTC.VisibleIndex = 4;
             // 
             // colMAMH
             // 
@@ -424,13 +374,86 @@ namespace QLDSV_TC
             this.colHUYDANGKY.Name = "colHUYDANGKY";
             this.colHUYDANGKY.OptionsColumn.ReadOnly = true;
             // 
-            // colMALTC
+            // sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter
             // 
-            this.colMALTC.FieldName = "MALTC";
-            this.colMALTC.Name = "colMALTC";
-            this.colMALTC.OptionsColumn.ReadOnly = true;
-            this.colMALTC.Visible = true;
-            this.colMALTC.VisibleIndex = 4;
+            this.sP_LAY_DS_MONHOC_DADKY_NKHKTableAdapter.ClearBeforeFill = true;
+            // 
+            // fillToolStrip
+            // 
+            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mASVToolStripLabel,
+            this.mASVToolStripTextBox,
+            this.nIENKHOAToolStripLabel,
+            this.nIENKHOAToolStripTextBox,
+            this.hOCKYToolStripLabel,
+            this.hOCKYToolStripTextBox,
+            this.fillToolStripButton});
+            this.fillToolStrip.Location = new System.Drawing.Point(0, 662);
+            this.fillToolStrip.Name = "fillToolStrip";
+            this.fillToolStrip.Size = new System.Drawing.Size(1370, 25);
+            this.fillToolStrip.TabIndex = 4;
+            this.fillToolStrip.Text = "fillToolStrip";
+            // 
+            // mASVToolStripLabel
+            // 
+            this.mASVToolStripLabel.Name = "mASVToolStripLabel";
+            this.mASVToolStripLabel.Size = new System.Drawing.Size(42, 22);
+            this.mASVToolStripLabel.Text = "MASV:";
+            // 
+            // mASVToolStripTextBox
+            // 
+            this.mASVToolStripTextBox.Name = "mASVToolStripTextBox";
+            this.mASVToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // nIENKHOAToolStripLabel
+            // 
+            this.nIENKHOAToolStripLabel.Name = "nIENKHOAToolStripLabel";
+            this.nIENKHOAToolStripLabel.Size = new System.Drawing.Size(70, 22);
+            this.nIENKHOAToolStripLabel.Text = "NIENKHOA:";
+            // 
+            // nIENKHOAToolStripTextBox
+            // 
+            this.nIENKHOAToolStripTextBox.Name = "nIENKHOAToolStripTextBox";
+            this.nIENKHOAToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // hOCKYToolStripLabel
+            // 
+            this.hOCKYToolStripLabel.Name = "hOCKYToolStripLabel";
+            this.hOCKYToolStripLabel.Size = new System.Drawing.Size(50, 22);
+            this.hOCKYToolStripLabel.Text = "HOCKY:";
+            // 
+            // hOCKYToolStripTextBox
+            // 
+            this.hOCKYToolStripTextBox.Name = "hOCKYToolStripTextBox";
+            this.hOCKYToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillToolStripButton
+            // 
+            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillToolStripButton.Name = "fillToolStripButton";
+            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
+            this.fillToolStripButton.Text = "Fill";
+            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(318, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Danh Sách Môn Học Mở Trong Học Kỳ ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(5, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(267, 21);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Danh Sách Môn Học Đã Đăng Ký";
             // 
             // frmDky_LopTinChi
             // 
@@ -452,6 +475,7 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.cmbNienKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDSMH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_NKHKBindingSource)).EndInit();
@@ -459,11 +483,12 @@ namespace QLDSV_TC
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.fillToolStrip.ResumeLayout(false);
             this.fillToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_LAY_DS_MONHOC_DADKY_NKHKGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +535,7 @@ namespace QLDSV_TC
         private DevExpress.XtraGrid.Columns.GridColumn colTENGV;
         private DevExpress.XtraGrid.Columns.GridColumn colNHOM;
         private DevExpress.XtraGrid.Columns.GridColumn colHUYDANGKY;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

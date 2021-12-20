@@ -124,6 +124,7 @@ namespace QLDSV_TC
 
         private void from_DongHocPhi_Load(object sender, EventArgs e)
         {
+            dS.EnforceConstraints = false;
             cmbNienKhoa.Enabled = cmbHocKy.Enabled = seHocPhi.Enabled = btnThem.Enabled =  false;
             seSoTienDong.Enabled = btnDong.Enabled = false;
         }
@@ -131,6 +132,7 @@ namespace QLDSV_TC
         private void btnThemHocPhi_Click(object sender, EventArgs e)
         {
             cmbNienKhoa.Enabled = cmbHocKy.Enabled = seHocPhi.Enabled = btnThem.Enabled = true;
+            this.sP_LAY_DS_HOCPHI_1SVBindingSource.AddNew();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -141,13 +143,13 @@ namespace QLDSV_TC
                 Program.ExecSqlNonQuery(strlenh);
                 this.sP_LAY_DS_HOCPHI_1SVTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sP_LAY_DS_HOCPHI_1SVTableAdapter.Fill(this.dS.SP_LAY_DS_HOCPHI_1SV, txtMaSV.Text);
-
+                MessageBox.Show("Thêm thành công!!", "", MessageBoxButtons.OK);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            MessageBox.Show("Thêm thành công!!","", MessageBoxButtons.OK);
+           
 
             cmbNienKhoa.Enabled = cmbHocKy.Enabled = seHocPhi.Enabled = btnThem.Enabled = false;
         }
@@ -160,6 +162,12 @@ namespace QLDSV_TC
 
         private void btnDong_Click(object sender, EventArgs e)
         {
+            if(int.Parse(seSoTienDong.Text) <= 0)
+            {
+                MessageBox.Show("Đóng học phí không thành công, Số tiền đóng phải lớn hơn 0 ", "", MessageBoxButtons.OK);
+                return;
+                seSoTienDong.Focus();
+            }
             try
             {
                 String strlenh = "EXEC SP_INSERT_CT_DHP_SV '" + txtMaSV.Text + "','" + cmbNienKhoa.Text + "','" + int.Parse(cmbHocKy.Text) + "','" + int.Parse(seSoTienDong.Text) + "'";

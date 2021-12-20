@@ -133,6 +133,7 @@ namespace QLDSV_TC
             {
                 btnDongHocPhi.Enabled = false;
                 btnDSDHPLTC.Enabled = false;
+                btnDangKyLTC.Enabled = false;
             }
             else if (Program.mGroup == "SV")
             {
@@ -149,11 +150,13 @@ namespace QLDSV_TC
                 btnBDMLTC.Enabled = false;
                 btnDSLTC.Enabled = false;
                 btnBDTK.Enabled = false;
+                btnDangKy.Enabled = false;
             }
             else if (Program.mGroup == "PGV")
             {
                 btnDongHocPhi.Enabled = false;
                 btnDSDHPLTC.Enabled = false;
+                btnDangKyLTC.Enabled = false;
             }
         }
 
@@ -190,6 +193,66 @@ namespace QLDSV_TC
                 from_DongHocPhi f = new from_DongHocPhi();
                 f.MdiParent = this;
                 f.Show();
+            }
+        }
+
+        private void btnLop_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(fmt_Lop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                fmt_Lop f = new fmt_Lop();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnNhapDiem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frm_NhapDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frm_NhapDiem f = new frm_NhapDiem();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnMonHoc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frm_MonHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frm_MonHoc f = new frm_MonHoc();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnDangKy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frm_TaoTaiKhoan));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frm_TaoTaiKhoan f = new frm_TaoTaiKhoan();
+                f.MdiParent = this;
+                f.Show();
+            }
+
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult ds = MessageBox.Show("Bạn chắc chắn muốn đăng xuất không ?", "Thông báo !", MessageBoxButtons.YesNo);
+            if (ds == DialogResult.Yes)
+            {
+                this.Hide();
+
+                Program.frmDN.Visible = true;
             }
         }
     }

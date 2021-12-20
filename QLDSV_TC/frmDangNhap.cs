@@ -156,5 +156,10 @@ namespace QLDSV_TC
             Program.conn.Close();
             Program.frmChinh.Show();
         }
+
+        private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

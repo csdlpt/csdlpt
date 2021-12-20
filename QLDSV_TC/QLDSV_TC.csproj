@@ -76,6 +76,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="fmt_Lop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fmt_Lop.Designer.cs">
+      <DependentUpon>fmt_Lop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,24 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_GiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_GiangVien.Designer.cs">
+      <DependentUpon>frm_GiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_MonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_MonHoc.Designer.cs">
+      <DependentUpon>frm_MonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_NhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NhapDiem.Designer.cs">
+      <DependentUpon>frm_NhapDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_NhapSinhVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +147,12 @@
     </Compile>
     <Compile Include="frm_Report_BDTK.Designer.cs">
       <DependentUpon>frm_Report_BDTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TaoTaiKhoan.Designer.cs">
+      <DependentUpon>frm_TaoTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="from_DongHocPhi.cs">
       <SubType>Form</SubType>
@@ -150,7 +180,10 @@
     <Compile Include="rp_PhieuDiem.Designer.cs">
       <DependentUpon>rp_PhieuDiem.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
+    <EmbeddedResource Include="fmt_Lop.resx">
+      <DependentUpon>fmt_Lop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDky_LopTinChi.resx">
@@ -165,6 +198,15 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_GiangVien.resx">
+      <DependentUpon>frm_GiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_MonHoc.resx">
+      <DependentUpon>frm_MonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NhapDiem.resx">
+      <DependentUpon>frm_NhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_NhapSinhVien.resx">
       <DependentUpon>frm_NhapSinhVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Report_BDTK.resx">
       <DependentUpon>frm_Report_BDTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TaoTaiKhoan.resx">
+      <DependentUpon>frm_TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="from_DongHocPhi.resx">
       <DependentUpon>from_DongHocPhi.cs</DependentUpon>

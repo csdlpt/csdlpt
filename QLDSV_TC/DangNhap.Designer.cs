@@ -170,6 +170,7 @@ namespace QLDSV_TC
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(244, 25);
             this.cmbChiNhanh.TabIndex = 12;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // txtPassword
             // 
